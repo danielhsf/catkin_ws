@@ -105,6 +105,13 @@
 /home/robotica/catkin_ws/build/ros_essentials_cpp/CMakeFiles/actionlib_msgs_generate_messages_eus.dir
 /home/robotica/catkin_ws/build/ros_essentials_cpp/CMakeFiles/turtlesim_clean_node.dir
 /home/robotica/catkin_ws/build/ros_essentials_cpp/CMakeFiles/image_pub_sub_cpp.dir
+/home/robotica/catkin_ws/build/programming_robots_with_ros/CMakeFiles/list_install_components.dir
+/home/robotica/catkin_ws/build/programming_robots_with_ros/CMakeFiles/install.dir
+/home/robotica/catkin_ws/build/programming_robots_with_ros/CMakeFiles/rebuild_cache.dir
+/home/robotica/catkin_ws/build/programming_robots_with_ros/CMakeFiles/install/strip.dir
+/home/robotica/catkin_ws/build/programming_robots_with_ros/CMakeFiles/install/local.dir
+/home/robotica/catkin_ws/build/programming_robots_with_ros/CMakeFiles/test.dir
+/home/robotica/catkin_ws/build/programming_robots_with_ros/CMakeFiles/edit_cache.dir
 /home/robotica/catkin_ws/build/my_pcl_tutorial/CMakeFiles/install.dir
 /home/robotica/catkin_ws/build/my_pcl_tutorial/CMakeFiles/edit_cache.dir
 /home/robotica/catkin_ws/build/my_pcl_tutorial/CMakeFiles/install/local.dir

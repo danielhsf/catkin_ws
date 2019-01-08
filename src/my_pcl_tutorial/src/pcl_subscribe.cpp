@@ -3,6 +3,7 @@
 #include <pcl/point_types.h>
 #include <pcl/filters/filter.h>
 #include <pcl/filters/passthrough.h>
+#include <pcl/filters/voxel_grid.h>
 
 typedef pcl::PointCloud<pcl::PointXYZ> PointCloud;
 
@@ -22,8 +23,14 @@ void callback(const PointCloud::ConstPtr& msg)
   pass.setFilterLimits (0.0, 1.0);
   pass.filter (*PassTroughfilter);
   printf ("After PassThrough Filter = %d\n",PassTroughfilter->width*PassTroughfilter->height);
-  //BOOST_FOREACH (const pcl::PointXYZ& pt, msg->points)
-  //  printf ("\t(%f, %f, %f)\n", pt.x, pt.y, pt.z);
+  //Voxel Filter
+  PointCloud::Ptr cloud_filtered (new PointCloud);
+  //Create the filtering Voxel
+  pcl::VoxelGrid<pcl::PointXYZ> sor;
+  sor.setInputCloud (PassTroughfilter);
+  sor.setLeafSize (0.02f, 0.02f, 0.02f);
+  sor.filter (*cloud_filtered);
+  printf ("After Voxel Grid Filter = %d\n",cloud_filtered->width*cloud_filtered->height);
 }
 int main(int argc, char** argv)
 {

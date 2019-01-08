@@ -2667,6 +2667,24 @@ clean: ros_essentials_cpp/CMakeFiles/image_pub_sub_cpp.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory programming_robots_with_ros
+
+# Convenience name for "all" pass in the directory.
+programming_robots_with_ros/all:
+
+.PHONY : programming_robots_with_ros/all
+
+# Convenience name for "clean" pass in the directory.
+programming_robots_with_ros/clean:
+
+.PHONY : programming_robots_with_ros/clean
+
+# Convenience name for "preinstall" pass in the directory.
+programming_robots_with_ros/preinstall:
+
+.PHONY : programming_robots_with_ros/preinstall
+
+#=============================================================================
 # Directory level rules for directory my_pcl_tutorial
 
 # Convenience name for "all" pass in the directory.

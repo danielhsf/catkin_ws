@@ -393,6 +393,12 @@ pcl_ros_DIR:PATH=/opt/ros/kinetic/share/pcl_ros/cmake
 pluginlib_DIR:PATH=/opt/ros/kinetic/share/pluginlib/cmake
 
 //Value Computed by CMake
+programming_robots_with_ros_BINARY_DIR:STATIC=/home/robotica/catkin_ws/build/programming_robots_with_ros
+
+//Value Computed by CMake
+programming_robots_with_ros_SOURCE_DIR:STATIC=/home/robotica/catkin_ws/src/programming_robots_with_ros
+
+//Value Computed by CMake
 ros_basic_tutorials_BINARY_DIR:STATIC=/home/robotica/catkin_ws/build/ros_basic_tutorials
 
 //Value Computed by CMake
@@ -593,7 +599,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
