@@ -181,19 +181,19 @@ pcl_subscribe_cpp/fast:
 .PHONY : pcl_subscribe_cpp/fast
 
 # Convenience name for target.
-my_pcl_tutorial/CMakeFiles/pcl_publish_cpp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_pcl_tutorial/CMakeFiles/pcl_publish_cpp.dir/rule
-.PHONY : my_pcl_tutorial/CMakeFiles/pcl_publish_cpp.dir/rule
+my_pcl_tutorial/CMakeFiles/readimud_cpp.dir/rule:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_pcl_tutorial/CMakeFiles/readimud_cpp.dir/rule
+.PHONY : my_pcl_tutorial/CMakeFiles/readimud_cpp.dir/rule
 
 # Convenience name for target.
-pcl_publish_cpp: my_pcl_tutorial/CMakeFiles/pcl_publish_cpp.dir/rule
+readimud_cpp: my_pcl_tutorial/CMakeFiles/readimud_cpp.dir/rule
 
-.PHONY : pcl_publish_cpp
+.PHONY : readimud_cpp
 
 # fast build rule for target.
-pcl_publish_cpp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_pcl_tutorial/CMakeFiles/pcl_publish_cpp.dir/build.make my_pcl_tutorial/CMakeFiles/pcl_publish_cpp.dir/build
-.PHONY : pcl_publish_cpp/fast
+readimud_cpp/fast:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_pcl_tutorial/CMakeFiles/readimud_cpp.dir/build.make my_pcl_tutorial/CMakeFiles/readimud_cpp.dir/build
+.PHONY : readimud_cpp/fast
 
 # Convenience name for target.
 my_pcl_tutorial/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/rule:
@@ -915,33 +915,6 @@ tf2_msgs_generate_messages_lisp/fast:
 	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_pcl_tutorial/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make my_pcl_tutorial/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
 .PHONY : tf2_msgs_generate_messages_lisp/fast
 
-src/pcl_publish.o: src/pcl_publish.cpp.o
-
-.PHONY : src/pcl_publish.o
-
-# target to build an object file
-src/pcl_publish.cpp.o:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_pcl_tutorial/CMakeFiles/pcl_publish_cpp.dir/build.make my_pcl_tutorial/CMakeFiles/pcl_publish_cpp.dir/src/pcl_publish.cpp.o
-.PHONY : src/pcl_publish.cpp.o
-
-src/pcl_publish.i: src/pcl_publish.cpp.i
-
-.PHONY : src/pcl_publish.i
-
-# target to preprocess a source file
-src/pcl_publish.cpp.i:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_pcl_tutorial/CMakeFiles/pcl_publish_cpp.dir/build.make my_pcl_tutorial/CMakeFiles/pcl_publish_cpp.dir/src/pcl_publish.cpp.i
-.PHONY : src/pcl_publish.cpp.i
-
-src/pcl_publish.s: src/pcl_publish.cpp.s
-
-.PHONY : src/pcl_publish.s
-
-# target to generate assembly for a file
-src/pcl_publish.cpp.s:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_pcl_tutorial/CMakeFiles/pcl_publish_cpp.dir/build.make my_pcl_tutorial/CMakeFiles/pcl_publish_cpp.dir/src/pcl_publish.cpp.s
-.PHONY : src/pcl_publish.cpp.s
-
 src/pcl_subscribe.o: src/pcl_subscribe.cpp.o
 
 .PHONY : src/pcl_subscribe.o
@@ -969,6 +942,33 @@ src/pcl_subscribe.cpp.s:
 	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_pcl_tutorial/CMakeFiles/pcl_subscribe_cpp.dir/build.make my_pcl_tutorial/CMakeFiles/pcl_subscribe_cpp.dir/src/pcl_subscribe.cpp.s
 .PHONY : src/pcl_subscribe.cpp.s
 
+src/readimud.o: src/readimud.cpp.o
+
+.PHONY : src/readimud.o
+
+# target to build an object file
+src/readimud.cpp.o:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_pcl_tutorial/CMakeFiles/readimud_cpp.dir/build.make my_pcl_tutorial/CMakeFiles/readimud_cpp.dir/src/readimud.cpp.o
+.PHONY : src/readimud.cpp.o
+
+src/readimud.i: src/readimud.cpp.i
+
+.PHONY : src/readimud.i
+
+# target to preprocess a source file
+src/readimud.cpp.i:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_pcl_tutorial/CMakeFiles/readimud_cpp.dir/build.make my_pcl_tutorial/CMakeFiles/readimud_cpp.dir/src/readimud.cpp.i
+.PHONY : src/readimud.cpp.i
+
+src/readimud.s: src/readimud.cpp.s
+
+.PHONY : src/readimud.s
+
+# target to generate assembly for a file
+src/readimud.cpp.s:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_pcl_tutorial/CMakeFiles/readimud_cpp.dir/build.make my_pcl_tutorial/CMakeFiles/readimud_cpp.dir/src/readimud.cpp.s
+.PHONY : src/readimud.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -980,7 +980,7 @@ help:
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... pcl_subscribe_cpp"
-	@echo "... pcl_publish_cpp"
+	@echo "... readimud_cpp"
 	@echo "... pcl_msgs_generate_messages_cpp"
 	@echo "... list_install_components"
 	@echo "... bond_generate_messages_eus"
@@ -1032,12 +1032,12 @@ help:
 	@echo "... actionlib_generate_messages_nodejs"
 	@echo "... actionlib_generate_messages_py"
 	@echo "... tf2_msgs_generate_messages_lisp"
-	@echo "... src/pcl_publish.o"
-	@echo "... src/pcl_publish.i"
-	@echo "... src/pcl_publish.s"
 	@echo "... src/pcl_subscribe.o"
 	@echo "... src/pcl_subscribe.i"
 	@echo "... src/pcl_subscribe.s"
+	@echo "... src/readimud.o"
+	@echo "... src/readimud.i"
+	@echo "... src/readimud.s"
 .PHONY : help
 
 

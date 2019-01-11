@@ -6,7 +6,8 @@
                 "${workspaceFolder}/**",
                 "/opt/ros/kinetic/include/",
                 "/usr/include/pcl-1.7",
-                "/usr/include/eigen3"
+                "/usr/include/eigen3",
+                "/usr/include/pcl-1.7"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

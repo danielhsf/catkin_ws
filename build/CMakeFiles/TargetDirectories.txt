@@ -117,7 +117,7 @@
 /home/robotica/catkin_ws/build/my_pcl_tutorial/CMakeFiles/install/local.dir
 /home/robotica/catkin_ws/build/my_pcl_tutorial/CMakeFiles/install/strip.dir
 /home/robotica/catkin_ws/build/my_pcl_tutorial/CMakeFiles/pcl_subscribe_cpp.dir
-/home/robotica/catkin_ws/build/my_pcl_tutorial/CMakeFiles/pcl_publish_cpp.dir
+/home/robotica/catkin_ws/build/my_pcl_tutorial/CMakeFiles/readimud_cpp.dir
 /home/robotica/catkin_ws/build/my_pcl_tutorial/CMakeFiles/pcl_msgs_generate_messages_cpp.dir
 /home/robotica/catkin_ws/build/my_pcl_tutorial/CMakeFiles/list_install_components.dir
 /home/robotica/catkin_ws/build/my_pcl_tutorial/CMakeFiles/bond_generate_messages_eus.dir

@@ -199,8 +199,8 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-add_executable(pcl_publish_cpp src/pcl_publish.cpp)
-target_link_libraries(pcl_publish_cpp ${catkin_LIBRARIES})
+add_executable(readimud_cpp src/readimud.cpp)
+target_link_libraries(readimud_cpp ${catkin_LIBRARIES})
 
 add_executable(pcl_subscribe_cpp src/pcl_subscribe.cpp)
 target_link_libraries(pcl_subscribe_cpp ${catkin_LIBRARIES})

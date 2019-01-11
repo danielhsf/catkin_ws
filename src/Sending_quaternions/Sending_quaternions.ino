@@ -29,8 +29,8 @@ void loop(void)
 { 
   imu::Quaternion quat = bno.getQuat();
   values[0] = quat.w();
-  values[1] = quat.y();
-  values[2] = quat.x();
+  values[1] = quat.x();
+  values[2] = quat.y();
   values[3] = quat.z();
   sensorimu.data = values;
   chatter.publish(&sensorimu);

@@ -1115,17 +1115,17 @@ pcl_subscribe_cpp/fast:
 .PHONY : pcl_subscribe_cpp/fast
 
 #=============================================================================
-# Target rules for targets named pcl_publish_cpp
+# Target rules for targets named readimud_cpp
 
 # Build rule for target.
-pcl_publish_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 pcl_publish_cpp
-.PHONY : pcl_publish_cpp
+readimud_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 readimud_cpp
+.PHONY : readimud_cpp
 
 # fast build rule for target.
-pcl_publish_cpp/fast:
-	$(MAKE) -f my_pcl_tutorial/CMakeFiles/pcl_publish_cpp.dir/build.make my_pcl_tutorial/CMakeFiles/pcl_publish_cpp.dir/build
-.PHONY : pcl_publish_cpp/fast
+readimud_cpp/fast:
+	$(MAKE) -f my_pcl_tutorial/CMakeFiles/readimud_cpp.dir/build.make my_pcl_tutorial/CMakeFiles/readimud_cpp.dir/build
+.PHONY : readimud_cpp/fast
 
 #=============================================================================
 # Target rules for targets named pcl_msgs_generate_messages_cpp
@@ -1837,7 +1837,7 @@ help:
 	@echo "... turtlesim_clean_node"
 	@echo "... image_pub_sub_cpp"
 	@echo "... pcl_subscribe_cpp"
-	@echo "... pcl_publish_cpp"
+	@echo "... readimud_cpp"
 	@echo "... pcl_msgs_generate_messages_cpp"
 	@echo "... bond_generate_messages_eus"
 	@echo "... bond_generate_messages_cpp"
