@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(programming_robots_with_ros_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT " " STREQUAL " ")
+if(NOT "/home/robotica/catkin_ws/devel/include " STREQUAL " ")
   set(programming_robots_with_ros_INCLUDE_DIRS "")
-  set(_include_dirs "")
+  set(_include_dirs "/home/robotica/catkin_ws/devel/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -152,7 +152,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(programming_robots_with_ros_EXPORTED_TARGETS "")
+set(programming_robots_with_ros_EXPORTED_TARGETS "programming_robots_with_ros_generate_messages_cpp;programming_robots_with_ros_generate_messages_eus;programming_robots_with_ros_generate_messages_lisp;programming_robots_with_ros_generate_messages_nodejs;programming_robots_with_ros_generate_messages_py")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${programming_robots_with_ros_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -160,7 +160,7 @@ foreach(t ${programming_robots_with_ros_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "geometry_msgs;rospy;sensor_msgs;std_msgs")
+set(depends "geometry_msgs;rospy;sensor_msgs;std_msgs;message_runtime;actionlib_msgs")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls
@@ -189,7 +189,7 @@ foreach(depend ${depends})
   list(APPEND programming_robots_with_ros_EXPORTED_TARGETS ${${programming_robots_with_ros_dep}_EXPORTED_TARGETS})
 endforeach()
 
-set(pkg_cfg_extras "")
+set(pkg_cfg_extras "programming_robots_with_ros-msg-extras.cmake")
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${programming_robots_with_ros_DIR}/${extra})

@@ -120,6 +120,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/robotica/catkin_ws/build/ros_basic_tutorials/cmake_install.cmake")
   include("/home/robotica/catkin_ws/build/ros_essentials_cpp/cmake_install.cmake")
   include("/home/robotica/catkin_ws/build/programming_robots_with_ros/cmake_install.cmake")
+  include("/home/robotica/catkin_ws/build/masterdegree/cmake_install.cmake")
   include("/home/robotica/catkin_ws/build/my_pcl_tutorial/cmake_install.cmake")
   include("/home/robotica/catkin_ws/build/turtlesim_cleaner_cpp/cmake_install.cmake")
 

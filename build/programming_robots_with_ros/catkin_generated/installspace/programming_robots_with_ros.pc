@@ -3,6 +3,6 @@ prefix=/home/robotica/catkin_ws/install
 Name: programming_robots_with_ros
 Description: Description of programming_robots_with_ros
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/robotica/catkin_ws/install/include
 Libs: -L/home/robotica/catkin_ws/install/lib -lprogramming_robots_with_ros
-Requires: geometry_msgs rospy sensor_msgs std_msgs
+Requires: geometry_msgs rospy sensor_msgs std_msgs message_runtime actionlib_msgs

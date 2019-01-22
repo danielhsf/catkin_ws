@@ -1,2 +1,2 @@
-set(programming_robots_with_ros_MESSAGE_FILES "")
-set(programming_robots_with_ros_SERVICE_FILES "")
+set(programming_robots_with_ros_MESSAGE_FILES "/home/robotica/catkin_ws/src/programming_robots_with_ros/msg/complex.msg;/home/robotica/catkin_ws/devel/share/programming_robots_with_ros/msg/TimerAction.msg;/home/robotica/catkin_ws/devel/share/programming_robots_with_ros/msg/TimerActionGoal.msg;/home/robotica/catkin_ws/devel/share/programming_robots_with_ros/msg/TimerActionResult.msg;/home/robotica/catkin_ws/devel/share/programming_robots_with_ros/msg/TimerActionFeedback.msg;/home/robotica/catkin_ws/devel/share/programming_robots_with_ros/msg/TimerGoal.msg;/home/robotica/catkin_ws/devel/share/programming_robots_with_ros/msg/TimerResult.msg;/home/robotica/catkin_ws/devel/share/programming_robots_with_ros/msg/TimerFeedback.msg")
+set(programming_robots_with_ros_SERVICE_FILES "/home/robotica/catkin_ws/src/programming_robots_with_ros/srv/WordCount.srv")

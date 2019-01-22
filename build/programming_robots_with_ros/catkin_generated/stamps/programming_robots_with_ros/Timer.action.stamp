@@ -1,0 +1,10 @@
+#goal definition
+duration time_to_wait
+---
+#result definition
+duration time_elapsed
+uint32 updates_sent
+---
+#feedback
+duration time_elapsed
+duration time_remaining

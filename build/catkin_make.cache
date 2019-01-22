@@ -1,2 +1,2 @@
-my_pcl_tutorial:programming_robots_with_ros:ros_basic_tutorials:ros_essentials_cpp:turtlesim_cleaner_cpp
+masterdegree:my_pcl_tutorial:programming_robots_with_ros:ros_basic_tutorials:ros_essentials_cpp:turtlesim_cleaner_cpp
 -DCATKIN_DEVEL_PREFIX=/home/robotica/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/robotica/catkin_ws/install -G Unix Makefiles

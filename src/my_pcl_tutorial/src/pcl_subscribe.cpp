@@ -40,15 +40,20 @@ void callback(const PointCloud::ConstPtr& msg){
   pcl::PassThrough<pcl::PointXYZ> pass;
   pass.setInputCloud(RemovedNaNs);
   pass.setFilterFieldName ("z");
-  pass.setFilterLimits (0.0, 2.0);
+  pass.setFilterLimits (0.0, 1.15);
   pass.filter (*PassTroughfilter);
-  //printf ("After PassThrough Filter = %d\n",PassTroughfilter->width*PassTroughfilter->height);
+  //printf ("After PassThrough Filter z = %d\n",PassTroughfilter->width*PassTroughfilter->height);
+  pass.setInputCloud(PassTroughfilter);
+  pass.setFilterFieldName ("x");
+  pass.setFilterLimits (-0.3, 0.3);
+  pass.filter (*PassTroughfilter);
+  //printf ("After PassThrough Filter x = %d\n",PassTroughfilter->width*PassTroughfilter->height);
   //Voxel Filter
   PointCloud::Ptr cloud_filtered (new PointCloud);
   //Create the filtering Voxel
   pcl::VoxelGrid<pcl::PointXYZ> sor;
   sor.setInputCloud (PassTroughfilter);
-  sor.setLeafSize (0.01f, 0.01f, 0.01f);
+  sor.setLeafSize (0.02f, 0.02f, 0.02f);
   sor.filter (*cloud_filtered);
   //printf ("After Voxel Grid Filter = %d\n",cloud_filtered->width*cloud_filtered->height);
 
@@ -102,13 +107,13 @@ void callback(const PointCloud::ConstPtr& msg){
   seg.setModelType (pcl::SACMODEL_PLANE);
   seg.setMethodType (pcl::SAC_RANSAC);
   seg.setMaxIterations (1000);
-  seg.setDistanceThreshold (0.005);
+  seg.setDistanceThreshold (0.01);
 
   // Create the filtering object
   pcl::ExtractIndices<pcl::PointXYZ> extract;
 
   int i = 0, nr_points = (int) cloud_out->points.size ();
-  printf("Número de Pontos: %d\n", nr_points);
+  //printf("Número de Pontos: %d\n", nr_points);
   // While 30% of the original cloud is still there
   while (cloud_out->points.size () > 0.05 * nr_points)
   {
@@ -116,23 +121,23 @@ void callback(const PointCloud::ConstPtr& msg){
     // Segment the largest planar component from the remaining cloud
     seg.setInputCloud (cloud_out);
     seg.segment (*inliers, *coefficients);
-    printf("Número de inliers: %d\n",(int) inliers->indices.size());
+    //printf("Número de inliers: %d\n",(int) inliers->indices.size());
     if (inliers->indices.size () == 0)
     {
       std::cerr << "Could not estimate a planar model for the given dataset." << std::endl;
       break;
     }
-	std::cerr << "Coeficientes do plano (A,B,C,D): " << coefficients->values[0] << " " 
-                                      << coefficients->values[1] << " "
-                                      << coefficients->values[2] << " " 
-                                      << coefficients->values[3] << std::endl;
+	//std::cerr << "Coeficientes do plano (A,B,C,D): " << coefficients->values[0] << " " 
+  //                                    << coefficients->values[1] << " "
+  //                                    << coefficients->values[2] << " " 
+  //                                    << coefficients->values[3] << std::endl;
     
     // Extract the inliers
     extract.setInputCloud (cloud_out);
     extract.setIndices (inliers);
     extract.setNegative (false);
     extract.filter (*cloud_p);
-    std::cerr << "Pontos que pertencem ao plano " << cloud_p->width * cloud_p->height << " data points." << std::endl;
+    //std::cerr << "Pontos que pertencem ao plano " << cloud_p->width * cloud_p->height << " data points." << std::endl;
 	
 	  //std::stringstream ss;
     //ss << "5vrep_" << i << ".pcd";
@@ -143,10 +148,10 @@ void callback(const PointCloud::ConstPtr& msg){
     extract.filter (*cloud_f);
     cloud_out.swap (cloud_f);
     i++;
-    printf("Número de Pontos em cloud_out: %d\n ", cloud_out->width*cloud_out->height);
+    //printf("Número de Pontos em cloud_out: %d\n ", cloud_out->width*cloud_out->height);
   }
 
-  printf("Planos detectados = %d\n",i);
+  printf("Segmentos de planos detectados = %d\n",i);
   
 }
 int main(int argc, char** argv)

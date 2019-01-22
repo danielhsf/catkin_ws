@@ -1,0 +1,21 @@
+(cl:defpackage programming_robots_with_ros-msg
+  (:use )
+  (:export
+   "<TIMERACTION>"
+   "TIMERACTION"
+   "<TIMERACTIONFEEDBACK>"
+   "TIMERACTIONFEEDBACK"
+   "<TIMERACTIONGOAL>"
+   "TIMERACTIONGOAL"
+   "<TIMERACTIONRESULT>"
+   "TIMERACTIONRESULT"
+   "<TIMERFEEDBACK>"
+   "TIMERFEEDBACK"
+   "<TIMERGOAL>"
+   "TIMERGOAL"
+   "<TIMERRESULT>"
+   "TIMERRESULT"
+   "<COMPLEX>"
+   "COMPLEX"
+  ))
+
