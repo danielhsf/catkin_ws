@@ -6,7 +6,7 @@
 #include <pcl/io/pcd_io.h>
 
 void cloudCB(const sensor_msgs::PointCloud2 &input){
-    pcl::PointCloud<pcl::PointXYZ> cloud;
+    pcl::PointCloud<pcl::PointXYZRGBA> cloud;
     pcl::fromROSMsg(input, cloud);
     //Save data as test.pcd file
     pcl::io::savePCDFileASCII("test.pcd", cloud);
@@ -17,6 +17,6 @@ main(int argc, char **argv){
     ROS_INFO("Started PCL write node");
 
     ros::NodeHandle nh;
-    ros::Subscriber bat_sub = nh.subscribe("pcl_output",10,cloudCB);
+    ros::Subscriber bat_sub = nh.subscribe("camera/depth_registered/points",10,cloudCB);
     ros::spin();
 }

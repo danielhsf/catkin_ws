@@ -216,3 +216,12 @@ target_link_libraries(pcl_write_cpp ${catkin_LIBRARIES})
 
 add_executable(pcl_read_cpp src/pcl_read.cpp)
 target_link_libraries(pcl_read_cpp ${catkin_LIBRARIES})
+
+add_executable(transform_view_cpp src/transform_view.cpp)
+target_link_libraries(transform_view_cpp ${catkin_LIBRARIES})
+
+add_executable(masterdegree_cpp src/masterdegree.cpp)
+target_link_libraries(masterdegree_cpp ${catkin_LIBRARIES})
+
+add_executable(transform_one_point src/transform_one_point.cpp)
+target_link_libraries(transform_one_point ${catkin_LIBRARIES})

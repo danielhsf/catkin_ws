@@ -9,7 +9,11 @@
 /home/robotica/catkin_ws/src/masterdegree/src/filters.cpp
 ros/ros.h
 -
-pcl_ros/point_cloud.h
+pcl/point_cloud.h
+-
+pcl_conversions/pcl_conversions.h
+-
+sensor_msgs/PointCloud2.h
 -
 
 /opt/ros/kinetic/include/pcl_conversions/pcl_conversions.h
@@ -130,26 +134,6 @@ ros/serialization.h
 ros/builtin_message_traits.h
 -
 ros/message_operations.h
--
-
-/opt/ros/kinetic/include/pcl_ros/point_cloud.h
-ros/ros.h
--
-pcl/point_cloud.h
--
-pcl/point_traits.h
--
-pcl/for_each_type.h
--
-pcl/conversions.h
--
-pcl_conversions/pcl_conversions.h
--
-sensor_msgs/PointCloud2.h
--
-boost/mpl/size.hpp
--
-boost/ref.hpp
 -
 
 /opt/ros/kinetic/include/ros/advertise_options.h

@@ -166,6 +166,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+masterdegree/CMakeFiles/transform_one_point.dir/rule:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/transform_one_point.dir/rule
+.PHONY : masterdegree/CMakeFiles/transform_one_point.dir/rule
+
+# Convenience name for target.
+transform_one_point: masterdegree/CMakeFiles/transform_one_point.dir/rule
+
+.PHONY : transform_one_point
+
+# fast build rule for target.
+transform_one_point/fast:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/transform_one_point.dir/build.make masterdegree/CMakeFiles/transform_one_point.dir/build
+.PHONY : transform_one_point/fast
+
+# Convenience name for target.
 masterdegree/CMakeFiles/pcl_write_cpp.dir/rule:
 	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/pcl_write_cpp.dir/rule
 .PHONY : masterdegree/CMakeFiles/pcl_write_cpp.dir/rule
@@ -421,6 +436,21 @@ pcl_msgs_generate_messages_lisp/fast:
 .PHONY : pcl_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
+masterdegree/CMakeFiles/masterdegree_cpp.dir/rule:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/masterdegree_cpp.dir/rule
+.PHONY : masterdegree/CMakeFiles/masterdegree_cpp.dir/rule
+
+# Convenience name for target.
+masterdegree_cpp: masterdegree/CMakeFiles/masterdegree_cpp.dir/rule
+
+.PHONY : masterdegree_cpp
+
+# fast build rule for target.
+masterdegree_cpp/fast:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/masterdegree_cpp.dir/build.make masterdegree/CMakeFiles/masterdegree_cpp.dir/build
+.PHONY : masterdegree_cpp/fast
+
+# Convenience name for target.
 masterdegree/CMakeFiles/pcl_read_cpp.dir/rule:
 	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/pcl_read_cpp.dir/rule
 .PHONY : masterdegree/CMakeFiles/pcl_read_cpp.dir/rule
@@ -494,6 +524,21 @@ dynamic_reconfigure_generate_messages_cpp: masterdegree/CMakeFiles/dynamic_recon
 dynamic_reconfigure_generate_messages_cpp/fast:
 	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
 .PHONY : dynamic_reconfigure_generate_messages_cpp/fast
+
+# Convenience name for target.
+masterdegree/CMakeFiles/transform_view_cpp.dir/rule:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/transform_view_cpp.dir/rule
+.PHONY : masterdegree/CMakeFiles/transform_view_cpp.dir/rule
+
+# Convenience name for target.
+transform_view_cpp: masterdegree/CMakeFiles/transform_view_cpp.dir/rule
+
+.PHONY : transform_view_cpp
+
+# fast build rule for target.
+transform_view_cpp/fast:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/transform_view_cpp.dir/build.make masterdegree/CMakeFiles/transform_view_cpp.dir/build
+.PHONY : transform_view_cpp/fast
 
 # Convenience name for target.
 masterdegree/CMakeFiles/pcl_filter_cpp.dir/rule:
@@ -987,6 +1032,33 @@ src/filters.cpp.s:
 	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/filters_cpp.dir/build.make masterdegree/CMakeFiles/filters_cpp.dir/src/filters.cpp.s
 .PHONY : src/filters.cpp.s
 
+src/masterdegree.o: src/masterdegree.cpp.o
+
+.PHONY : src/masterdegree.o
+
+# target to build an object file
+src/masterdegree.cpp.o:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/masterdegree_cpp.dir/build.make masterdegree/CMakeFiles/masterdegree_cpp.dir/src/masterdegree.cpp.o
+.PHONY : src/masterdegree.cpp.o
+
+src/masterdegree.i: src/masterdegree.cpp.i
+
+.PHONY : src/masterdegree.i
+
+# target to preprocess a source file
+src/masterdegree.cpp.i:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/masterdegree_cpp.dir/build.make masterdegree/CMakeFiles/masterdegree_cpp.dir/src/masterdegree.cpp.i
+.PHONY : src/masterdegree.cpp.i
+
+src/masterdegree.s: src/masterdegree.cpp.s
+
+.PHONY : src/masterdegree.s
+
+# target to generate assembly for a file
+src/masterdegree.cpp.s:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/masterdegree_cpp.dir/build.make masterdegree/CMakeFiles/masterdegree_cpp.dir/src/masterdegree.cpp.s
+.PHONY : src/masterdegree.cpp.s
+
 src/pcl_filter.o: src/pcl_filter.cpp.o
 
 .PHONY : src/pcl_filter.o
@@ -1095,6 +1167,60 @@ src/pcl_write.cpp.s:
 	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/pcl_write_cpp.dir/build.make masterdegree/CMakeFiles/pcl_write_cpp.dir/src/pcl_write.cpp.s
 .PHONY : src/pcl_write.cpp.s
 
+src/transform_one_point.o: src/transform_one_point.cpp.o
+
+.PHONY : src/transform_one_point.o
+
+# target to build an object file
+src/transform_one_point.cpp.o:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/transform_one_point.dir/build.make masterdegree/CMakeFiles/transform_one_point.dir/src/transform_one_point.cpp.o
+.PHONY : src/transform_one_point.cpp.o
+
+src/transform_one_point.i: src/transform_one_point.cpp.i
+
+.PHONY : src/transform_one_point.i
+
+# target to preprocess a source file
+src/transform_one_point.cpp.i:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/transform_one_point.dir/build.make masterdegree/CMakeFiles/transform_one_point.dir/src/transform_one_point.cpp.i
+.PHONY : src/transform_one_point.cpp.i
+
+src/transform_one_point.s: src/transform_one_point.cpp.s
+
+.PHONY : src/transform_one_point.s
+
+# target to generate assembly for a file
+src/transform_one_point.cpp.s:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/transform_one_point.dir/build.make masterdegree/CMakeFiles/transform_one_point.dir/src/transform_one_point.cpp.s
+.PHONY : src/transform_one_point.cpp.s
+
+src/transform_view.o: src/transform_view.cpp.o
+
+.PHONY : src/transform_view.o
+
+# target to build an object file
+src/transform_view.cpp.o:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/transform_view_cpp.dir/build.make masterdegree/CMakeFiles/transform_view_cpp.dir/src/transform_view.cpp.o
+.PHONY : src/transform_view.cpp.o
+
+src/transform_view.i: src/transform_view.cpp.i
+
+.PHONY : src/transform_view.i
+
+# target to preprocess a source file
+src/transform_view.cpp.i:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/transform_view_cpp.dir/build.make masterdegree/CMakeFiles/transform_view_cpp.dir/src/transform_view.cpp.i
+.PHONY : src/transform_view.cpp.i
+
+src/transform_view.s: src/transform_view.cpp.s
+
+.PHONY : src/transform_view.s
+
+# target to generate assembly for a file
+src/transform_view.cpp.s:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/transform_view_cpp.dir/build.make masterdegree/CMakeFiles/transform_view_cpp.dir/src/transform_view.cpp.s
+.PHONY : src/transform_view.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1105,6 +1231,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... transform_one_point"
 	@echo "... pcl_write_cpp"
 	@echo "... filters_cpp"
 	@echo "... pcl_msgs_generate_messages_cpp"
@@ -1123,11 +1250,13 @@ help:
 	@echo "... pcl_msgs_generate_messages_nodejs"
 	@echo "... std_srvs_generate_messages_nodejs"
 	@echo "... pcl_msgs_generate_messages_lisp"
+	@echo "... masterdegree_cpp"
 	@echo "... pcl_read_cpp"
 	@echo "... tf2_msgs_generate_messages_cpp"
 	@echo "... pcl_msgs_generate_messages_py"
 	@echo "... pcl_msgs_generate_messages_eus"
 	@echo "... dynamic_reconfigure_generate_messages_cpp"
+	@echo "... transform_view_cpp"
 	@echo "... pcl_filter_cpp"
 	@echo "... std_srvs_generate_messages_py"
 	@echo "... test"
@@ -1164,6 +1293,9 @@ help:
 	@echo "... src/filters.o"
 	@echo "... src/filters.i"
 	@echo "... src/filters.s"
+	@echo "... src/masterdegree.o"
+	@echo "... src/masterdegree.i"
+	@echo "... src/masterdegree.s"
 	@echo "... src/pcl_filter.o"
 	@echo "... src/pcl_filter.i"
 	@echo "... src/pcl_filter.s"
@@ -1176,6 +1308,12 @@ help:
 	@echo "... src/pcl_write.o"
 	@echo "... src/pcl_write.i"
 	@echo "... src/pcl_write.s"
+	@echo "... src/transform_one_point.o"
+	@echo "... src/transform_one_point.i"
+	@echo "... src/transform_one_point.s"
+	@echo "... src/transform_view.o"
+	@echo "... src/transform_view.i"
+	@echo "... src/transform_view.s"
 .PHONY : help
 
 

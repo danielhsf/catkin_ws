@@ -1362,6 +1362,19 @@ programming_robots_with_ros_geneus/fast:
 .PHONY : programming_robots_with_ros_geneus/fast
 
 #=============================================================================
+# Target rules for targets named transform_one_point
+
+# Build rule for target.
+transform_one_point: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 transform_one_point
+.PHONY : transform_one_point
+
+# fast build rule for target.
+transform_one_point/fast:
+	$(MAKE) -f masterdegree/CMakeFiles/transform_one_point.dir/build.make masterdegree/CMakeFiles/transform_one_point.dir/build
+.PHONY : transform_one_point/fast
+
+#=============================================================================
 # Target rules for targets named pcl_write_cpp
 
 # Build rule for target.
@@ -1583,6 +1596,19 @@ pcl_msgs_generate_messages_lisp/fast:
 .PHONY : pcl_msgs_generate_messages_lisp/fast
 
 #=============================================================================
+# Target rules for targets named masterdegree_cpp
+
+# Build rule for target.
+masterdegree_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 masterdegree_cpp
+.PHONY : masterdegree_cpp
+
+# fast build rule for target.
+masterdegree_cpp/fast:
+	$(MAKE) -f masterdegree/CMakeFiles/masterdegree_cpp.dir/build.make masterdegree/CMakeFiles/masterdegree_cpp.dir/build
+.PHONY : masterdegree_cpp/fast
+
+#=============================================================================
 # Target rules for targets named pcl_read_cpp
 
 # Build rule for target.
@@ -1646,6 +1672,19 @@ dynamic_reconfigure_generate_messages_cpp: cmake_check_build_system
 dynamic_reconfigure_generate_messages_cpp/fast:
 	$(MAKE) -f masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
 .PHONY : dynamic_reconfigure_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named transform_view_cpp
+
+# Build rule for target.
+transform_view_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 transform_view_cpp
+.PHONY : transform_view_cpp
+
+# fast build rule for target.
+transform_view_cpp/fast:
+	$(MAKE) -f masterdegree/CMakeFiles/transform_view_cpp.dir/build.make masterdegree/CMakeFiles/transform_view_cpp.dir/build
+.PHONY : transform_view_cpp/fast
 
 #=============================================================================
 # Target rules for targets named pcl_filter_cpp
@@ -2181,6 +2220,7 @@ help:
 	@echo "... _programming_robots_with_ros_generate_messages_check_deps_TimerFeedback"
 	@echo "... programming_robots_with_ros_generate_messages_cpp"
 	@echo "... programming_robots_with_ros_geneus"
+	@echo "... transform_one_point"
 	@echo "... pcl_write_cpp"
 	@echo "... filters_cpp"
 	@echo "... pcl_msgs_generate_messages_cpp"
@@ -2198,11 +2238,13 @@ help:
 	@echo "... pcl_msgs_generate_messages_nodejs"
 	@echo "... std_srvs_generate_messages_nodejs"
 	@echo "... pcl_msgs_generate_messages_lisp"
+	@echo "... masterdegree_cpp"
 	@echo "... pcl_read_cpp"
 	@echo "... tf2_msgs_generate_messages_cpp"
 	@echo "... pcl_msgs_generate_messages_py"
 	@echo "... pcl_msgs_generate_messages_eus"
 	@echo "... dynamic_reconfigure_generate_messages_cpp"
+	@echo "... transform_view_cpp"
 	@echo "... pcl_filter_cpp"
 	@echo "... std_srvs_generate_messages_py"
 	@echo "... pcl_ros_gencfg"
