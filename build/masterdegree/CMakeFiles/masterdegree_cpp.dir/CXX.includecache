@@ -27,6 +27,8 @@ std_msgs/Float32MultiArray.h
 -
 pcl/common/transforms.h
 -
+cmath
+-
 pcl/filters/extract_indices.h
 -
 pcl/sample_consensus/method_types.h
