@@ -47,13 +47,16 @@ public:
         ori = nh.subscribe("/sensorimu", 1, &cloudHandler::orientationcallback, this);
         pcl_sub = nh.subscribe("/camera/depth_registered/points", 1, &cloudHandler::callback, this);
         pcl_pub = nh.advertise<sensor_msgs::PointCloud2>("pcl_filtered", 1);
-        transform_1 = Eigen::Matrix4f::Identity();
+        
         transform_0 = Eigen::Matrix4f::Zero();
-        transform_1(2,3) = -0.8;
-        transform_0(0,0) = 1; 
-        transform_0(2,1) = 1;
+        transform_0(0,0) = -1; 
         transform_0(1,2) = -1; 
+        transform_0(2,1) = -1;
         transform_0(3,3) = 1; 
+        transform_1 = Eigen::Matrix4f::Identity();
+        transform_1(2,3) = 0.8;
+        transform_2 = Eigen::Matrix4f::Identity();
+        transform_2(1,1) = -1;
     }
 
     void orientationcallback(std_msgs::Float32MultiArray sensorimu){
@@ -75,13 +78,13 @@ public:
 	        pitch = asin(sinp);
         //pitch = 0;
         // yaw (z-axis rotation)
-        float siny_cosp = +2.0 * (orientation.w() * orientation.z() + orientation.x() * orientation.y());
-        float cosy_cosp = +1.0 - 2.0 * (orientation.y() * orientation.y() + orientation.z() * orientation.z());  
-        yaw = atan2f(siny_cosp, cosy_cosp);
-        roll = - roll;
-        pitch = - pitch;
-        yaw = - yaw;
-        //yaw = 0;
+        //float siny_cosp = +2.0 * (orientation.w() * orientation.z() + orientation.x() * orientation.y());
+        //float cosy_cosp = +1.0 - 2.0 * (orientation.y() * orientation.y() + orientation.z() * orientation.z());  
+        //yaw = atan2f(siny_cosp, cosy_cosp);
+        //roll = roll;
+        //pitch = pitch;
+        //yaw = - yaw;
+        yaw = 0;
     }
 
     void callback(const sensor_msgs::PointCloud2& input){
@@ -92,8 +95,8 @@ public:
         //Removing NaNs
         std::vector<int> indices;
         pcl::removeNaNFromPointCloud(cloud,cloud_filtered,indices);
-        //printf("Original Point Cloud Size = %d\n",cloud.width * cloud.height); 
-        //printf("After filtering nans = %d\n",cloud_filtered.width * cloud_filtered.height);
+        printf("Original Point Cloud Size = %d\n",cloud.width * cloud.height); 
+        printf("After filtering nans = %d\n",cloud_filtered.width * cloud_filtered.height);
         //PassThrough Filter
         //z
         pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloudPTR(new pcl::PointCloud<pcl::PointXYZRGBA>);
@@ -110,14 +113,15 @@ public:
         pass.setFilterFieldName("x");
         pass.setFilterLimits(-0.3,0.3);
         pass.filter(cloud_filtered);
-        //printf("After Pass Through Filter = %d\n",cloud_filtered.width * cloud_filtered.height);
+        printf("After Pass Through Filter = %d\n",cloud_filtered.width * cloud_filtered.height);
+        
         //Voxel Grid
         pcl::VoxelGrid<pcl::PointXYZRGBA> sor;
         cloudPTR = cloud_filtered.makeShared();
         sor.setInputCloud(cloudPTR);
         sor.setLeafSize(0.02f, 0.02f, 0.02f);
         sor.filter(cloud_filtered);
-        //printf("After Voxel Grid Filter = %d\n",cloud_filtered.width * cloud_filtered.height);
+        printf("After Voxel Grid Filter = %d\n",cloud_filtered.width * cloud_filtered.height);
         //Transform View
         transform_1(0,0) = cos(pitch)*cos(yaw);
         transform_1(1,0) = cos(pitch)*sin(yaw);
@@ -135,8 +139,8 @@ public:
         pcl::transformPointCloud(cloud_filtered,cloud_filtered,transform_0);
         //pcl::io::savePCDFileASCII("Transformado.pcd", cloud_filtered);
         pcl::transformPointCloud(cloud_filtered,cloud_filtered,transform_1);
+        pcl::transformPointCloud(cloud_filtered,cloud_filtered,transform_2);
         
-        //pcl::transformPointCloud(cloud_filtered,cloud_filtered,transform_1);
         // RANSAC
         // create the Segmentation object
         pcl::SACSegmentation<pcl::PointXYZRGBA> seg;
@@ -167,10 +171,10 @@ public:
             std::cerr << "Could not estimate a planar model for the given dataset." << std::endl;
             break;
         }
-	    //std::cerr << "Coeficientes do plano (A,B,C,D): " << coefficients->values[0] << " " 
-        //                              << coefficients->values[1] << " "
-        //                              << coefficients->values[2] << " " 
-        //                              << coefficients->values[3] << std::endl;
+	    std::cerr << "Coeficientes do plano (A,B,C,D): " << coefficients->values[0] << " " 
+                                      << coefficients->values[1] << " "
+                                      << coefficients->values[2] << " " 
+                                      << coefficients->values[3] << std::endl;
     
         // Extract the inliers
         extract.setInputCloud (cloudPTR);
@@ -178,7 +182,6 @@ public:
         extract.setNegative (false);
         extract.filter (cloud_p);
         //std::cerr << "Pontos que pertencem ao plano " << cloud_p.width * cloud_p.height << " data points." << std::endl;
-	
 	    // Create the filtering object
         extract.setNegative (true);
         extract.filter (*cloud_f);
@@ -190,11 +193,8 @@ public:
         //output
         pcl::toROSMsg(cloud_filtered, output);
     	output.header.frame_id = "point_cloud";
-        pcl::io::savePCDFileASCII("filtrado.pcd", cloud_filtered);
-        //pcl::io::savePCDFileASCII("transformado.pcd", cloud_transformed);
         //pcl::io::savePCDFileASCII("filtrado.pcd", cloud_filtered);
-
-        //pcl::io::savePCDFileASCII("filtrado_transformado.pcd", cloud_out);
+        
         pcl_pub.publish(output);
     }
 
@@ -202,6 +202,7 @@ protected:
     Eigen::Quaternionf orientation;
     Eigen::Matrix4f transform_0; 
     Eigen::Matrix4f transform_1; 
+    Eigen::Matrix4f transform_2;
     float roll;
     float pitch;
     float yaw;

@@ -5,4 +5,4 @@ Description: Description of masterdegree
 Version: 0.0.0
 Cflags: -I/home/robotica/catkin_ws/src/masterdegree/include
 Libs: -L/home/robotica/catkin_ws/devel/lib -lmasterdegree
-Requires: cv_bridge image_transport pcl_conversions pcl_ros roscpp rospy sensor_msgs
+Requires: cv_bridge image_transport pcl_conversions pcl_ros pcl_msgs roscpp rospy sensor_msgs

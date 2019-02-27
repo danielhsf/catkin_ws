@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   image_transport
   pcl_conversions
   pcl_ros
+  pcl_msgs
   roscpp
   rospy
   sensor_msgs
@@ -19,6 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
+find_package( OpenCV 3 REQUIRED )
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -109,7 +111,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES masterdegree
-  CATKIN_DEPENDS cv_bridge image_transport pcl_conversions pcl_ros roscpp rospy sensor_msgs
+  CATKIN_DEPENDS cv_bridge image_transport pcl_conversions pcl_ros pcl_msgs roscpp rospy sensor_msgs
   #DEPENDS system_lib
 )
 
@@ -122,6 +124,7 @@ catkin_package(
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
@@ -225,3 +228,12 @@ target_link_libraries(masterdegree_cpp ${catkin_LIBRARIES})
 
 add_executable(transform_one_point src/transform_one_point.cpp)
 target_link_libraries(transform_one_point ${catkin_LIBRARIES})
+
+add_executable(only_plane_detection src/only_plane_detection.cpp)
+target_link_libraries(only_plane_detection ${catkin_LIBRARIES})
+
+add_executable(play_video_cpp src/play_video.cpp)
+target_link_libraries(play_video_cpp ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+
+add_executable(kinectxyz src/kinectxyz.cpp)
+target_link_libraries(kinectxyz ${catkin_LIBRARIES})

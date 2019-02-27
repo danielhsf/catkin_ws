@@ -1,0 +1,8 @@
+prefix=/home/robotica/catkin_ws/install
+
+Name: grade
+Description: Description of grade
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/robotica/catkin_ws/install/lib 
+Requires: 

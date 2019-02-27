@@ -17,6 +17,10 @@ sensor_msgs/PointCloud2.h
 -
 pcl/filters/voxel_grid.h
 -
+pcl/PolygonMesh.h
+-
+pcl_msgs/PolygonMesh.h
+-
 
 /opt/ros/kinetic/include/pcl_conversions/pcl_conversions.h
 vector

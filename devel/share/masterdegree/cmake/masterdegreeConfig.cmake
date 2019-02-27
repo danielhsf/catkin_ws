@@ -160,7 +160,7 @@ foreach(t ${masterdegree_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "cv_bridge;image_transport;pcl_conversions;pcl_ros;roscpp;rospy;sensor_msgs")
+set(depends "cv_bridge;image_transport;pcl_conversions;pcl_ros;pcl_msgs;roscpp;rospy;sensor_msgs")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

@@ -4,6 +4,9 @@
 #include <sensor_msgs/PointCloud2.h>
 //#include <pcl/filters/statistical_outlier_removal.h>
 #include <pcl/filters/voxel_grid.h>
+#include <pcl/PolygonMesh.h>
+#include <pcl_msgs/PolygonMesh.h>
+
 
 class cloudHandler
 {
@@ -16,21 +19,12 @@ public:
 
     void cloudCB(const sensor_msgs::PointCloud2& input)
     {
-        pcl::PointCloud<pcl::PointXYZ> cloud;
-        pcl::PointCloud<pcl::PointXYZ> cloud_filtered;
+        pcl::PolygonMesh mesh;
+        pcl::PointCloud<pcl::PointXYZRGBA> cloud;
         sensor_msgs::PointCloud2 output;
-
         pcl::fromROSMsg(input, cloud);
-
-
-	pcl::VoxelGrid<pcl::PointXYZ> vox_obj;
-	vox_obj.setInputCloud (cloud.makeShared());
-
-	vox_obj.setLeafSize (0.1f, 0.1f, 0.1f);
-	
-	vox_obj.filter(cloud_filtered);
-
-        pcl::toROSMsg(cloud_filtered, output);
+        pcl::toPCLPointCloud2(cloud, mesh.cloud);
+        pcl::toROSMsg(cloud, output);
     	output.header.frame_id = "point_cloud";
 
         pcl_pub.publish(output);

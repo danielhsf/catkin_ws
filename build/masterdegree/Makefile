@@ -79,38 +79,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -122,6 +90,17 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -132,6 +111,27 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,19 +166,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-masterdegree/CMakeFiles/transform_one_point.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/transform_one_point.dir/rule
-.PHONY : masterdegree/CMakeFiles/transform_one_point.dir/rule
+masterdegree/CMakeFiles/kinectxyz.dir/rule:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/kinectxyz.dir/rule
+.PHONY : masterdegree/CMakeFiles/kinectxyz.dir/rule
 
 # Convenience name for target.
-transform_one_point: masterdegree/CMakeFiles/transform_one_point.dir/rule
+kinectxyz: masterdegree/CMakeFiles/kinectxyz.dir/rule
 
-.PHONY : transform_one_point
+.PHONY : kinectxyz
 
 # fast build rule for target.
-transform_one_point/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/transform_one_point.dir/build.make masterdegree/CMakeFiles/transform_one_point.dir/build
-.PHONY : transform_one_point/fast
+kinectxyz/fast:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/kinectxyz.dir/build.make masterdegree/CMakeFiles/kinectxyz.dir/build
+.PHONY : kinectxyz/fast
 
 # Convenience name for target.
 masterdegree/CMakeFiles/pcl_write_cpp.dir/rule:
@@ -211,246 +211,6 @@ filters_cpp/fast:
 .PHONY : filters_cpp/fast
 
 # Convenience name for target.
-masterdegree/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/rule
-.PHONY : masterdegree/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-pcl_msgs_generate_messages_cpp: masterdegree/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : pcl_msgs_generate_messages_cpp
-
-# fast build rule for target.
-pcl_msgs_generate_messages_cpp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/build.make masterdegree/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/build
-.PHONY : pcl_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/bond_generate_messages_eus.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/bond_generate_messages_eus.dir/rule
-.PHONY : masterdegree/CMakeFiles/bond_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-bond_generate_messages_eus: masterdegree/CMakeFiles/bond_generate_messages_eus.dir/rule
-
-.PHONY : bond_generate_messages_eus
-
-# fast build rule for target.
-bond_generate_messages_eus/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/bond_generate_messages_eus.dir/build.make masterdegree/CMakeFiles/bond_generate_messages_eus.dir/build
-.PHONY : bond_generate_messages_eus/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/bond_generate_messages_cpp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/bond_generate_messages_cpp.dir/rule
-.PHONY : masterdegree/CMakeFiles/bond_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-bond_generate_messages_cpp: masterdegree/CMakeFiles/bond_generate_messages_cpp.dir/rule
-
-.PHONY : bond_generate_messages_cpp
-
-# fast build rule for target.
-bond_generate_messages_cpp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/bond_generate_messages_cpp.dir/build.make masterdegree/CMakeFiles/bond_generate_messages_cpp.dir/build
-.PHONY : bond_generate_messages_cpp/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/nodelet_generate_messages_py.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/nodelet_generate_messages_py.dir/rule
-.PHONY : masterdegree/CMakeFiles/nodelet_generate_messages_py.dir/rule
-
-# Convenience name for target.
-nodelet_generate_messages_py: masterdegree/CMakeFiles/nodelet_generate_messages_py.dir/rule
-
-.PHONY : nodelet_generate_messages_py
-
-# fast build rule for target.
-nodelet_generate_messages_py/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/nodelet_generate_messages_py.dir/build.make masterdegree/CMakeFiles/nodelet_generate_messages_py.dir/build
-.PHONY : nodelet_generate_messages_py/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
-.PHONY : masterdegree/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_gencfg: masterdegree/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
-
-.PHONY : dynamic_reconfigure_gencfg
-
-# fast build rule for target.
-dynamic_reconfigure_gencfg/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/dynamic_reconfigure_gencfg.dir/build.make masterdegree/CMakeFiles/dynamic_reconfigure_gencfg.dir/build
-.PHONY : dynamic_reconfigure_gencfg/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/tf_generate_messages_lisp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/tf_generate_messages_lisp.dir/rule
-.PHONY : masterdegree/CMakeFiles/tf_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_lisp: masterdegree/CMakeFiles/tf_generate_messages_lisp.dir/rule
-
-.PHONY : tf_generate_messages_lisp
-
-# fast build rule for target.
-tf_generate_messages_lisp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/tf_generate_messages_lisp.dir/build.make masterdegree/CMakeFiles/tf_generate_messages_lisp.dir/build
-.PHONY : tf_generate_messages_lisp/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/nodelet_generate_messages_lisp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
-.PHONY : masterdegree/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-nodelet_generate_messages_lisp: masterdegree/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
-
-.PHONY : nodelet_generate_messages_lisp
-
-# fast build rule for target.
-nodelet_generate_messages_lisp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/nodelet_generate_messages_lisp.dir/build.make masterdegree/CMakeFiles/nodelet_generate_messages_lisp.dir/build
-.PHONY : nodelet_generate_messages_lisp/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
-.PHONY : masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_py: masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
-
-.PHONY : dynamic_reconfigure_generate_messages_py
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_py/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build.make masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_py/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/actionlib_generate_messages_eus.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-.PHONY : masterdegree/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_eus: masterdegree/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-
-.PHONY : actionlib_generate_messages_eus
-
-# fast build rule for target.
-actionlib_generate_messages_eus/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/actionlib_generate_messages_eus.dir/build.make masterdegree/CMakeFiles/actionlib_generate_messages_eus.dir/build
-.PHONY : actionlib_generate_messages_eus/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
-.PHONY : masterdegree/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_nodejs: masterdegree/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-tf2_msgs_generate_messages_nodejs/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build.make masterdegree/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build
-.PHONY : tf2_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/bond_generate_messages_nodejs.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/bond_generate_messages_nodejs.dir/rule
-.PHONY : masterdegree/CMakeFiles/bond_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-bond_generate_messages_nodejs: masterdegree/CMakeFiles/bond_generate_messages_nodejs.dir/rule
-
-.PHONY : bond_generate_messages_nodejs
-
-# fast build rule for target.
-bond_generate_messages_nodejs/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/bond_generate_messages_nodejs.dir/build.make masterdegree/CMakeFiles/bond_generate_messages_nodejs.dir/build
-.PHONY : bond_generate_messages_nodejs/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/nodelet_generate_messages_eus.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/nodelet_generate_messages_eus.dir/rule
-.PHONY : masterdegree/CMakeFiles/nodelet_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-nodelet_generate_messages_eus: masterdegree/CMakeFiles/nodelet_generate_messages_eus.dir/rule
-
-.PHONY : nodelet_generate_messages_eus
-
-# fast build rule for target.
-nodelet_generate_messages_eus/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/nodelet_generate_messages_eus.dir/build.make masterdegree/CMakeFiles/nodelet_generate_messages_eus.dir/build
-.PHONY : nodelet_generate_messages_eus/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/pcl_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/pcl_msgs_generate_messages_nodejs.dir/rule
-.PHONY : masterdegree/CMakeFiles/pcl_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-pcl_msgs_generate_messages_nodejs: masterdegree/CMakeFiles/pcl_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : pcl_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-pcl_msgs_generate_messages_nodejs/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/pcl_msgs_generate_messages_nodejs.dir/build.make masterdegree/CMakeFiles/pcl_msgs_generate_messages_nodejs.dir/build
-.PHONY : pcl_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-.PHONY : masterdegree/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_nodejs: masterdegree/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_srvs_generate_messages_nodejs
-
-# fast build rule for target.
-std_srvs_generate_messages_nodejs/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make masterdegree/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
-.PHONY : std_srvs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/rule
-.PHONY : masterdegree/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-pcl_msgs_generate_messages_lisp: masterdegree/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : pcl_msgs_generate_messages_lisp
-
-# fast build rule for target.
-pcl_msgs_generate_messages_lisp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/build.make masterdegree/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/build
-.PHONY : pcl_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/masterdegree_cpp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/masterdegree_cpp.dir/rule
-.PHONY : masterdegree/CMakeFiles/masterdegree_cpp.dir/rule
-
-# Convenience name for target.
-masterdegree_cpp: masterdegree/CMakeFiles/masterdegree_cpp.dir/rule
-
-.PHONY : masterdegree_cpp
-
-# fast build rule for target.
-masterdegree_cpp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/masterdegree_cpp.dir/build.make masterdegree/CMakeFiles/masterdegree_cpp.dir/build
-.PHONY : masterdegree_cpp/fast
-
-# Convenience name for target.
 masterdegree/CMakeFiles/pcl_read_cpp.dir/rule:
 	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/pcl_read_cpp.dir/rule
 .PHONY : masterdegree/CMakeFiles/pcl_read_cpp.dir/rule
@@ -464,81 +224,6 @@ pcl_read_cpp: masterdegree/CMakeFiles/pcl_read_cpp.dir/rule
 pcl_read_cpp/fast:
 	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/pcl_read_cpp.dir/build.make masterdegree/CMakeFiles/pcl_read_cpp.dir/build
 .PHONY : pcl_read_cpp/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
-.PHONY : masterdegree/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_cpp: masterdegree/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_cpp
-
-# fast build rule for target.
-tf2_msgs_generate_messages_cpp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make masterdegree/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
-.PHONY : tf2_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/pcl_msgs_generate_messages_py.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/pcl_msgs_generate_messages_py.dir/rule
-.PHONY : masterdegree/CMakeFiles/pcl_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-pcl_msgs_generate_messages_py: masterdegree/CMakeFiles/pcl_msgs_generate_messages_py.dir/rule
-
-.PHONY : pcl_msgs_generate_messages_py
-
-# fast build rule for target.
-pcl_msgs_generate_messages_py/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/pcl_msgs_generate_messages_py.dir/build.make masterdegree/CMakeFiles/pcl_msgs_generate_messages_py.dir/build
-.PHONY : pcl_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/pcl_msgs_generate_messages_eus.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/pcl_msgs_generate_messages_eus.dir/rule
-.PHONY : masterdegree/CMakeFiles/pcl_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-pcl_msgs_generate_messages_eus: masterdegree/CMakeFiles/pcl_msgs_generate_messages_eus.dir/rule
-
-.PHONY : pcl_msgs_generate_messages_eus
-
-# fast build rule for target.
-pcl_msgs_generate_messages_eus/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/pcl_msgs_generate_messages_eus.dir/build.make masterdegree/CMakeFiles/pcl_msgs_generate_messages_eus.dir/build
-.PHONY : pcl_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
-.PHONY : masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_cpp: masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
-
-.PHONY : dynamic_reconfigure_generate_messages_cpp
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_cpp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_cpp/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/transform_view_cpp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/transform_view_cpp.dir/rule
-.PHONY : masterdegree/CMakeFiles/transform_view_cpp.dir/rule
-
-# Convenience name for target.
-transform_view_cpp: masterdegree/CMakeFiles/transform_view_cpp.dir/rule
-
-.PHONY : transform_view_cpp
-
-# fast build rule for target.
-transform_view_cpp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/transform_view_cpp.dir/build.make masterdegree/CMakeFiles/transform_view_cpp.dir/build
-.PHONY : transform_view_cpp/fast
 
 # Convenience name for target.
 masterdegree/CMakeFiles/pcl_filter_cpp.dir/rule:
@@ -556,139 +241,19 @@ pcl_filter_cpp/fast:
 .PHONY : pcl_filter_cpp/fast
 
 # Convenience name for target.
-masterdegree/CMakeFiles/std_srvs_generate_messages_py.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-.PHONY : masterdegree/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+masterdegree/CMakeFiles/masterdegree_cpp.dir/rule:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/masterdegree_cpp.dir/rule
+.PHONY : masterdegree/CMakeFiles/masterdegree_cpp.dir/rule
 
 # Convenience name for target.
-std_srvs_generate_messages_py: masterdegree/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+masterdegree_cpp: masterdegree/CMakeFiles/masterdegree_cpp.dir/rule
 
-.PHONY : std_srvs_generate_messages_py
+.PHONY : masterdegree_cpp
 
 # fast build rule for target.
-std_srvs_generate_messages_py/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/std_srvs_generate_messages_py.dir/build.make masterdegree/CMakeFiles/std_srvs_generate_messages_py.dir/build
-.PHONY : std_srvs_generate_messages_py/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/pcl_ros_gencfg.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/pcl_ros_gencfg.dir/rule
-.PHONY : masterdegree/CMakeFiles/pcl_ros_gencfg.dir/rule
-
-# Convenience name for target.
-pcl_ros_gencfg: masterdegree/CMakeFiles/pcl_ros_gencfg.dir/rule
-
-.PHONY : pcl_ros_gencfg
-
-# fast build rule for target.
-pcl_ros_gencfg/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/pcl_ros_gencfg.dir/build.make masterdegree/CMakeFiles/pcl_ros_gencfg.dir/build
-.PHONY : pcl_ros_gencfg/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
-.PHONY : masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_lisp: masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
-
-.PHONY : dynamic_reconfigure_generate_messages_lisp
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_lisp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build.make masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_lisp/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/bond_generate_messages_py.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/bond_generate_messages_py.dir/rule
-.PHONY : masterdegree/CMakeFiles/bond_generate_messages_py.dir/rule
-
-# Convenience name for target.
-bond_generate_messages_py: masterdegree/CMakeFiles/bond_generate_messages_py.dir/rule
-
-.PHONY : bond_generate_messages_py
-
-# fast build rule for target.
-bond_generate_messages_py/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/bond_generate_messages_py.dir/build.make masterdegree/CMakeFiles/bond_generate_messages_py.dir/build
-.PHONY : bond_generate_messages_py/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-.PHONY : masterdegree/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_lisp: masterdegree/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-
-.PHONY : std_srvs_generate_messages_lisp
-
-# fast build rule for target.
-std_srvs_generate_messages_lisp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make masterdegree/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
-.PHONY : std_srvs_generate_messages_lisp/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule
-.PHONY : masterdegree/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-nodelet_generate_messages_nodejs: masterdegree/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule
-
-.PHONY : nodelet_generate_messages_nodejs
-
-# fast build rule for target.
-nodelet_generate_messages_nodejs/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/nodelet_generate_messages_nodejs.dir/build.make masterdegree/CMakeFiles/nodelet_generate_messages_nodejs.dir/build
-.PHONY : nodelet_generate_messages_nodejs/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/nodelet_generate_messages_cpp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
-.PHONY : masterdegree/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-nodelet_generate_messages_cpp: masterdegree/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
-
-.PHONY : nodelet_generate_messages_cpp
-
-# fast build rule for target.
-nodelet_generate_messages_cpp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/nodelet_generate_messages_cpp.dir/build.make masterdegree/CMakeFiles/nodelet_generate_messages_cpp.dir/build
-.PHONY : nodelet_generate_messages_cpp/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
-.PHONY : masterdegree/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_eus: masterdegree/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_eus
-
-# fast build rule for target.
-tf2_msgs_generate_messages_eus/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build.make masterdegree/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build
-.PHONY : tf2_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule
-.PHONY : masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_eus: masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule
-
-.PHONY : dynamic_reconfigure_generate_messages_eus
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_eus/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build.make masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_eus/fast
+masterdegree_cpp/fast:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/masterdegree_cpp.dir/build.make masterdegree/CMakeFiles/masterdegree_cpp.dir/build
+.PHONY : masterdegree_cpp/fast
 
 # Convenience name for target.
 masterdegree/CMakeFiles/pcl_publisher_cpp.dir/rule:
@@ -706,304 +271,64 @@ pcl_publisher_cpp/fast:
 .PHONY : pcl_publisher_cpp/fast
 
 # Convenience name for target.
-masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
-.PHONY : masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
+masterdegree/CMakeFiles/transform_one_point.dir/rule:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/transform_one_point.dir/rule
+.PHONY : masterdegree/CMakeFiles/transform_one_point.dir/rule
 
 # Convenience name for target.
-dynamic_reconfigure_generate_messages_nodejs: masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
+transform_one_point: masterdegree/CMakeFiles/transform_one_point.dir/rule
 
-.PHONY : dynamic_reconfigure_generate_messages_nodejs
+.PHONY : transform_one_point
 
 # fast build rule for target.
-dynamic_reconfigure_generate_messages_nodejs/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build.make masterdegree/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_nodejs/fast
+transform_one_point/fast:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/transform_one_point.dir/build.make masterdegree/CMakeFiles/transform_one_point.dir/build
+.PHONY : transform_one_point/fast
 
 # Convenience name for target.
-masterdegree/CMakeFiles/nodelet_topic_tools_gencfg.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/nodelet_topic_tools_gencfg.dir/rule
-.PHONY : masterdegree/CMakeFiles/nodelet_topic_tools_gencfg.dir/rule
+masterdegree/CMakeFiles/transform_view_cpp.dir/rule:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/transform_view_cpp.dir/rule
+.PHONY : masterdegree/CMakeFiles/transform_view_cpp.dir/rule
 
 # Convenience name for target.
-nodelet_topic_tools_gencfg: masterdegree/CMakeFiles/nodelet_topic_tools_gencfg.dir/rule
+transform_view_cpp: masterdegree/CMakeFiles/transform_view_cpp.dir/rule
 
-.PHONY : nodelet_topic_tools_gencfg
+.PHONY : transform_view_cpp
 
 # fast build rule for target.
-nodelet_topic_tools_gencfg/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/nodelet_topic_tools_gencfg.dir/build.make masterdegree/CMakeFiles/nodelet_topic_tools_gencfg.dir/build
-.PHONY : nodelet_topic_tools_gencfg/fast
+transform_view_cpp/fast:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/transform_view_cpp.dir/build.make masterdegree/CMakeFiles/transform_view_cpp.dir/build
+.PHONY : transform_view_cpp/fast
 
 # Convenience name for target.
-masterdegree/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-.PHONY : masterdegree/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+masterdegree/CMakeFiles/only_plane_detection.dir/rule:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/only_plane_detection.dir/rule
+.PHONY : masterdegree/CMakeFiles/only_plane_detection.dir/rule
 
 # Convenience name for target.
-std_srvs_generate_messages_cpp: masterdegree/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+only_plane_detection: masterdegree/CMakeFiles/only_plane_detection.dir/rule
 
-.PHONY : std_srvs_generate_messages_cpp
+.PHONY : only_plane_detection
 
 # fast build rule for target.
-std_srvs_generate_messages_cpp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make masterdegree/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
-.PHONY : std_srvs_generate_messages_cpp/fast
+only_plane_detection/fast:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/only_plane_detection.dir/build.make masterdegree/CMakeFiles/only_plane_detection.dir/build
+.PHONY : only_plane_detection/fast
 
 # Convenience name for target.
-masterdegree/CMakeFiles/tf_generate_messages_eus.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/tf_generate_messages_eus.dir/rule
-.PHONY : masterdegree/CMakeFiles/tf_generate_messages_eus.dir/rule
+masterdegree/CMakeFiles/play_video_cpp.dir/rule:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/play_video_cpp.dir/rule
+.PHONY : masterdegree/CMakeFiles/play_video_cpp.dir/rule
 
 # Convenience name for target.
-tf_generate_messages_eus: masterdegree/CMakeFiles/tf_generate_messages_eus.dir/rule
+play_video_cpp: masterdegree/CMakeFiles/play_video_cpp.dir/rule
 
-.PHONY : tf_generate_messages_eus
+.PHONY : play_video_cpp
 
 # fast build rule for target.
-tf_generate_messages_eus/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/tf_generate_messages_eus.dir/build.make masterdegree/CMakeFiles/tf_generate_messages_eus.dir/build
-.PHONY : tf_generate_messages_eus/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/tf_generate_messages_cpp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/tf_generate_messages_cpp.dir/rule
-.PHONY : masterdegree/CMakeFiles/tf_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_cpp: masterdegree/CMakeFiles/tf_generate_messages_cpp.dir/rule
-
-.PHONY : tf_generate_messages_cpp
-
-# fast build rule for target.
-tf_generate_messages_cpp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/tf_generate_messages_cpp.dir/build.make masterdegree/CMakeFiles/tf_generate_messages_cpp.dir/build
-.PHONY : tf_generate_messages_cpp/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/std_srvs_generate_messages_eus.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-.PHONY : masterdegree/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_eus: masterdegree/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-
-.PHONY : std_srvs_generate_messages_eus
-
-# fast build rule for target.
-std_srvs_generate_messages_eus/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make masterdegree/CMakeFiles/std_srvs_generate_messages_eus.dir/build
-.PHONY : std_srvs_generate_messages_eus/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/topic_tools_generate_messages_nodejs.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/topic_tools_generate_messages_nodejs.dir/rule
-.PHONY : masterdegree/CMakeFiles/topic_tools_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-topic_tools_generate_messages_nodejs: masterdegree/CMakeFiles/topic_tools_generate_messages_nodejs.dir/rule
-
-.PHONY : topic_tools_generate_messages_nodejs
-
-# fast build rule for target.
-topic_tools_generate_messages_nodejs/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/topic_tools_generate_messages_nodejs.dir/build.make masterdegree/CMakeFiles/topic_tools_generate_messages_nodejs.dir/build
-.PHONY : topic_tools_generate_messages_nodejs/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/bond_generate_messages_lisp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/bond_generate_messages_lisp.dir/rule
-.PHONY : masterdegree/CMakeFiles/bond_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-bond_generate_messages_lisp: masterdegree/CMakeFiles/bond_generate_messages_lisp.dir/rule
-
-.PHONY : bond_generate_messages_lisp
-
-# fast build rule for target.
-bond_generate_messages_lisp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/bond_generate_messages_lisp.dir/build.make masterdegree/CMakeFiles/bond_generate_messages_lisp.dir/build
-.PHONY : bond_generate_messages_lisp/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/topic_tools_generate_messages_cpp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/topic_tools_generate_messages_cpp.dir/rule
-.PHONY : masterdegree/CMakeFiles/topic_tools_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-topic_tools_generate_messages_cpp: masterdegree/CMakeFiles/topic_tools_generate_messages_cpp.dir/rule
-
-.PHONY : topic_tools_generate_messages_cpp
-
-# fast build rule for target.
-topic_tools_generate_messages_cpp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/topic_tools_generate_messages_cpp.dir/build.make masterdegree/CMakeFiles/topic_tools_generate_messages_cpp.dir/build
-.PHONY : topic_tools_generate_messages_cpp/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/topic_tools_generate_messages_eus.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/topic_tools_generate_messages_eus.dir/rule
-.PHONY : masterdegree/CMakeFiles/topic_tools_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-topic_tools_generate_messages_eus: masterdegree/CMakeFiles/topic_tools_generate_messages_eus.dir/rule
-
-.PHONY : topic_tools_generate_messages_eus
-
-# fast build rule for target.
-topic_tools_generate_messages_eus/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/topic_tools_generate_messages_eus.dir/build.make masterdegree/CMakeFiles/topic_tools_generate_messages_eus.dir/build
-.PHONY : topic_tools_generate_messages_eus/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/topic_tools_generate_messages_lisp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/topic_tools_generate_messages_lisp.dir/rule
-.PHONY : masterdegree/CMakeFiles/topic_tools_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-topic_tools_generate_messages_lisp: masterdegree/CMakeFiles/topic_tools_generate_messages_lisp.dir/rule
-
-.PHONY : topic_tools_generate_messages_lisp
-
-# fast build rule for target.
-topic_tools_generate_messages_lisp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/topic_tools_generate_messages_lisp.dir/build.make masterdegree/CMakeFiles/topic_tools_generate_messages_lisp.dir/build
-.PHONY : topic_tools_generate_messages_lisp/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
-.PHONY : masterdegree/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_py: masterdegree/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_py
-
-# fast build rule for target.
-tf2_msgs_generate_messages_py/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make masterdegree/CMakeFiles/tf2_msgs_generate_messages_py.dir/build
-.PHONY : tf2_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/topic_tools_generate_messages_py.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/topic_tools_generate_messages_py.dir/rule
-.PHONY : masterdegree/CMakeFiles/topic_tools_generate_messages_py.dir/rule
-
-# Convenience name for target.
-topic_tools_generate_messages_py: masterdegree/CMakeFiles/topic_tools_generate_messages_py.dir/rule
-
-.PHONY : topic_tools_generate_messages_py
-
-# fast build rule for target.
-topic_tools_generate_messages_py/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/topic_tools_generate_messages_py.dir/build.make masterdegree/CMakeFiles/topic_tools_generate_messages_py.dir/build
-.PHONY : topic_tools_generate_messages_py/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/tf_generate_messages_nodejs.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-.PHONY : masterdegree/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_nodejs: masterdegree/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-
-.PHONY : tf_generate_messages_nodejs
-
-# fast build rule for target.
-tf_generate_messages_nodejs/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/tf_generate_messages_nodejs.dir/build.make masterdegree/CMakeFiles/tf_generate_messages_nodejs.dir/build
-.PHONY : tf_generate_messages_nodejs/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/tf_generate_messages_py.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/tf_generate_messages_py.dir/rule
-.PHONY : masterdegree/CMakeFiles/tf_generate_messages_py.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_py: masterdegree/CMakeFiles/tf_generate_messages_py.dir/rule
-
-.PHONY : tf_generate_messages_py
-
-# fast build rule for target.
-tf_generate_messages_py/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/tf_generate_messages_py.dir/build.make masterdegree/CMakeFiles/tf_generate_messages_py.dir/build
-.PHONY : tf_generate_messages_py/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-.PHONY : masterdegree/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_cpp: masterdegree/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-.PHONY : actionlib_generate_messages_cpp
-
-# fast build rule for target.
-actionlib_generate_messages_cpp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make masterdegree/CMakeFiles/actionlib_generate_messages_cpp.dir/build
-.PHONY : actionlib_generate_messages_cpp/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/actionlib_generate_messages_lisp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-.PHONY : masterdegree/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_lisp: masterdegree/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-
-.PHONY : actionlib_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_generate_messages_lisp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make masterdegree/CMakeFiles/actionlib_generate_messages_lisp.dir/build
-.PHONY : actionlib_generate_messages_lisp/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-.PHONY : masterdegree/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_nodejs: masterdegree/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-.PHONY : actionlib_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_generate_messages_nodejs/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make masterdegree/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
-.PHONY : actionlib_generate_messages_nodejs/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/actionlib_generate_messages_py.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/actionlib_generate_messages_py.dir/rule
-.PHONY : masterdegree/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_py: masterdegree/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-.PHONY : actionlib_generate_messages_py
-
-# fast build rule for target.
-actionlib_generate_messages_py/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/actionlib_generate_messages_py.dir/build.make masterdegree/CMakeFiles/actionlib_generate_messages_py.dir/build
-.PHONY : actionlib_generate_messages_py/fast
-
-# Convenience name for target.
-masterdegree/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-.PHONY : masterdegree/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_lisp: masterdegree/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_lisp
-
-# fast build rule for target.
-tf2_msgs_generate_messages_lisp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make masterdegree/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
-.PHONY : tf2_msgs_generate_messages_lisp/fast
+play_video_cpp/fast:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/play_video_cpp.dir/build.make masterdegree/CMakeFiles/play_video_cpp.dir/build
+.PHONY : play_video_cpp/fast
 
 src/filters.o: src/filters.cpp.o
 
@@ -1032,6 +357,33 @@ src/filters.cpp.s:
 	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/filters_cpp.dir/build.make masterdegree/CMakeFiles/filters_cpp.dir/src/filters.cpp.s
 .PHONY : src/filters.cpp.s
 
+src/kinectxyz.o: src/kinectxyz.cpp.o
+
+.PHONY : src/kinectxyz.o
+
+# target to build an object file
+src/kinectxyz.cpp.o:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/kinectxyz.dir/build.make masterdegree/CMakeFiles/kinectxyz.dir/src/kinectxyz.cpp.o
+.PHONY : src/kinectxyz.cpp.o
+
+src/kinectxyz.i: src/kinectxyz.cpp.i
+
+.PHONY : src/kinectxyz.i
+
+# target to preprocess a source file
+src/kinectxyz.cpp.i:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/kinectxyz.dir/build.make masterdegree/CMakeFiles/kinectxyz.dir/src/kinectxyz.cpp.i
+.PHONY : src/kinectxyz.cpp.i
+
+src/kinectxyz.s: src/kinectxyz.cpp.s
+
+.PHONY : src/kinectxyz.s
+
+# target to generate assembly for a file
+src/kinectxyz.cpp.s:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/kinectxyz.dir/build.make masterdegree/CMakeFiles/kinectxyz.dir/src/kinectxyz.cpp.s
+.PHONY : src/kinectxyz.cpp.s
+
 src/masterdegree.o: src/masterdegree.cpp.o
 
 .PHONY : src/masterdegree.o
@@ -1058,6 +410,33 @@ src/masterdegree.s: src/masterdegree.cpp.s
 src/masterdegree.cpp.s:
 	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/masterdegree_cpp.dir/build.make masterdegree/CMakeFiles/masterdegree_cpp.dir/src/masterdegree.cpp.s
 .PHONY : src/masterdegree.cpp.s
+
+src/only_plane_detection.o: src/only_plane_detection.cpp.o
+
+.PHONY : src/only_plane_detection.o
+
+# target to build an object file
+src/only_plane_detection.cpp.o:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/only_plane_detection.dir/build.make masterdegree/CMakeFiles/only_plane_detection.dir/src/only_plane_detection.cpp.o
+.PHONY : src/only_plane_detection.cpp.o
+
+src/only_plane_detection.i: src/only_plane_detection.cpp.i
+
+.PHONY : src/only_plane_detection.i
+
+# target to preprocess a source file
+src/only_plane_detection.cpp.i:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/only_plane_detection.dir/build.make masterdegree/CMakeFiles/only_plane_detection.dir/src/only_plane_detection.cpp.i
+.PHONY : src/only_plane_detection.cpp.i
+
+src/only_plane_detection.s: src/only_plane_detection.cpp.s
+
+.PHONY : src/only_plane_detection.s
+
+# target to generate assembly for a file
+src/only_plane_detection.cpp.s:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/only_plane_detection.dir/build.make masterdegree/CMakeFiles/only_plane_detection.dir/src/only_plane_detection.cpp.s
+.PHONY : src/only_plane_detection.cpp.s
 
 src/pcl_filter.o: src/pcl_filter.cpp.o
 
@@ -1167,6 +546,33 @@ src/pcl_write.cpp.s:
 	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/pcl_write_cpp.dir/build.make masterdegree/CMakeFiles/pcl_write_cpp.dir/src/pcl_write.cpp.s
 .PHONY : src/pcl_write.cpp.s
 
+src/play_video.o: src/play_video.cpp.o
+
+.PHONY : src/play_video.o
+
+# target to build an object file
+src/play_video.cpp.o:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/play_video_cpp.dir/build.make masterdegree/CMakeFiles/play_video_cpp.dir/src/play_video.cpp.o
+.PHONY : src/play_video.cpp.o
+
+src/play_video.i: src/play_video.cpp.i
+
+.PHONY : src/play_video.i
+
+# target to preprocess a source file
+src/play_video.cpp.i:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/play_video_cpp.dir/build.make masterdegree/CMakeFiles/play_video_cpp.dir/src/play_video.cpp.i
+.PHONY : src/play_video.cpp.i
+
+src/play_video.s: src/play_video.cpp.s
+
+.PHONY : src/play_video.s
+
+# target to generate assembly for a file
+src/play_video.cpp.s:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/play_video_cpp.dir/build.make masterdegree/CMakeFiles/play_video_cpp.dir/src/play_video.cpp.s
+.PHONY : src/play_video.cpp.s
+
 src/transform_one_point.o: src/transform_one_point.cpp.o
 
 .PHONY : src/transform_one_point.o
@@ -1229,73 +635,34 @@ help:
 	@echo "... depend"
 	@echo "... install"
 	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... transform_one_point"
+	@echo "... kinectxyz"
 	@echo "... pcl_write_cpp"
 	@echo "... filters_cpp"
-	@echo "... pcl_msgs_generate_messages_cpp"
-	@echo "... list_install_components"
-	@echo "... bond_generate_messages_eus"
-	@echo "... bond_generate_messages_cpp"
-	@echo "... nodelet_generate_messages_py"
-	@echo "... dynamic_reconfigure_gencfg"
-	@echo "... tf_generate_messages_lisp"
-	@echo "... nodelet_generate_messages_lisp"
-	@echo "... dynamic_reconfigure_generate_messages_py"
-	@echo "... actionlib_generate_messages_eus"
-	@echo "... tf2_msgs_generate_messages_nodejs"
-	@echo "... bond_generate_messages_nodejs"
-	@echo "... nodelet_generate_messages_eus"
-	@echo "... pcl_msgs_generate_messages_nodejs"
-	@echo "... std_srvs_generate_messages_nodejs"
-	@echo "... pcl_msgs_generate_messages_lisp"
-	@echo "... masterdegree_cpp"
 	@echo "... pcl_read_cpp"
-	@echo "... tf2_msgs_generate_messages_cpp"
-	@echo "... pcl_msgs_generate_messages_py"
-	@echo "... pcl_msgs_generate_messages_eus"
-	@echo "... dynamic_reconfigure_generate_messages_cpp"
-	@echo "... transform_view_cpp"
 	@echo "... pcl_filter_cpp"
-	@echo "... std_srvs_generate_messages_py"
-	@echo "... test"
-	@echo "... pcl_ros_gencfg"
-	@echo "... dynamic_reconfigure_generate_messages_lisp"
-	@echo "... bond_generate_messages_py"
-	@echo "... std_srvs_generate_messages_lisp"
-	@echo "... nodelet_generate_messages_nodejs"
-	@echo "... nodelet_generate_messages_cpp"
-	@echo "... tf2_msgs_generate_messages_eus"
-	@echo "... dynamic_reconfigure_generate_messages_eus"
-	@echo "... pcl_publisher_cpp"
-	@echo "... dynamic_reconfigure_generate_messages_nodejs"
-	@echo "... nodelet_topic_tools_gencfg"
-	@echo "... std_srvs_generate_messages_cpp"
+	@echo "... masterdegree_cpp"
 	@echo "... rebuild_cache"
-	@echo "... tf_generate_messages_eus"
-	@echo "... tf_generate_messages_cpp"
-	@echo "... std_srvs_generate_messages_eus"
-	@echo "... topic_tools_generate_messages_nodejs"
-	@echo "... bond_generate_messages_lisp"
-	@echo "... topic_tools_generate_messages_cpp"
-	@echo "... topic_tools_generate_messages_eus"
-	@echo "... topic_tools_generate_messages_lisp"
-	@echo "... tf2_msgs_generate_messages_py"
-	@echo "... topic_tools_generate_messages_py"
-	@echo "... tf_generate_messages_nodejs"
-	@echo "... tf_generate_messages_py"
-	@echo "... actionlib_generate_messages_cpp"
-	@echo "... actionlib_generate_messages_lisp"
-	@echo "... actionlib_generate_messages_nodejs"
-	@echo "... actionlib_generate_messages_py"
-	@echo "... tf2_msgs_generate_messages_lisp"
+	@echo "... pcl_publisher_cpp"
+	@echo "... transform_one_point"
+	@echo "... list_install_components"
+	@echo "... install/strip"
+	@echo "... transform_view_cpp"
+	@echo "... only_plane_detection"
+	@echo "... play_video_cpp"
 	@echo "... src/filters.o"
 	@echo "... src/filters.i"
 	@echo "... src/filters.s"
+	@echo "... src/kinectxyz.o"
+	@echo "... src/kinectxyz.i"
+	@echo "... src/kinectxyz.s"
 	@echo "... src/masterdegree.o"
 	@echo "... src/masterdegree.i"
 	@echo "... src/masterdegree.s"
+	@echo "... src/only_plane_detection.o"
+	@echo "... src/only_plane_detection.i"
+	@echo "... src/only_plane_detection.s"
 	@echo "... src/pcl_filter.o"
 	@echo "... src/pcl_filter.i"
 	@echo "... src/pcl_filter.s"
@@ -1308,6 +675,9 @@ help:
 	@echo "... src/pcl_write.o"
 	@echo "... src/pcl_write.i"
 	@echo "... src/pcl_write.s"
+	@echo "... src/play_video.o"
+	@echo "... src/play_video.i"
+	@echo "... src/play_video.s"
 	@echo "... src/transform_one_point.o"
 	@echo "... src/transform_one_point.i"
 	@echo "... src/transform_one_point.s"
