@@ -237,3 +237,9 @@ target_link_libraries(play_video_cpp ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
 add_executable(kinectxyz src/kinectxyz.cpp)
 target_link_libraries(kinectxyz ${catkin_LIBRARIES})
+
+add_executable(save_pcd src/save_pcd.cpp)
+target_link_libraries(save_pcd ${catkin_LIBRARIES})
+
+add_executable(vitor_code src/vitor_code.cpp)
+target_link_libraries(vitor_code ${catkin_LIBRARIES})

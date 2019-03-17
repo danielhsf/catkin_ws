@@ -79,6 +79,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -89,17 +100,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -122,16 +122,16 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target install/local
+install/local/fast: install/local
 
-.PHONY : rebuild_cache/fast
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,21 +166,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-my_grid_map_tutorial/CMakeFiles/receive_point_cloud.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_grid_map_tutorial/CMakeFiles/receive_point_cloud.dir/rule
-.PHONY : my_grid_map_tutorial/CMakeFiles/receive_point_cloud.dir/rule
-
-# Convenience name for target.
-receive_point_cloud: my_grid_map_tutorial/CMakeFiles/receive_point_cloud.dir/rule
-
-.PHONY : receive_point_cloud
-
-# fast build rule for target.
-receive_point_cloud/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_grid_map_tutorial/CMakeFiles/receive_point_cloud.dir/build.make my_grid_map_tutorial/CMakeFiles/receive_point_cloud.dir/build
-.PHONY : receive_point_cloud/fast
-
-# Convenience name for target.
 my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_lisp.dir/rule:
 	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_lisp.dir/rule
 .PHONY : my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_lisp.dir/rule
@@ -194,126 +179,6 @@ map_msgs_generate_messages_lisp: my_grid_map_tutorial/CMakeFiles/map_msgs_genera
 map_msgs_generate_messages_lisp/fast:
 	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_lisp.dir/build.make my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_lisp.dir/build
 .PHONY : map_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_nodejs.dir/rule
-.PHONY : my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-map_msgs_generate_messages_nodejs: my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : map_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-map_msgs_generate_messages_nodejs/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_nodejs.dir/build.make my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_nodejs.dir/build
-.PHONY : map_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_cpp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_cpp.dir/rule
-.PHONY : my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-map_msgs_generate_messages_cpp: my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : map_msgs_generate_messages_cpp
-
-# fast build rule for target.
-map_msgs_generate_messages_cpp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_cpp.dir/build.make my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_cpp.dir/build
-.PHONY : map_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule
-.PHONY : my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-octomap_msgs_generate_messages_cpp: my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : octomap_msgs_generate_messages_cpp
-
-# fast build rule for target.
-octomap_msgs_generate_messages_cpp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/build.make my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/build
-.PHONY : octomap_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-my_grid_map_tutorial/CMakeFiles/simple_demo_node.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_grid_map_tutorial/CMakeFiles/simple_demo_node.dir/rule
-.PHONY : my_grid_map_tutorial/CMakeFiles/simple_demo_node.dir/rule
-
-# Convenience name for target.
-simple_demo_node: my_grid_map_tutorial/CMakeFiles/simple_demo_node.dir/rule
-
-.PHONY : simple_demo_node
-
-# fast build rule for target.
-simple_demo_node/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_grid_map_tutorial/CMakeFiles/simple_demo_node.dir/build.make my_grid_map_tutorial/CMakeFiles/simple_demo_node.dir/build
-.PHONY : simple_demo_node/fast
-
-# Convenience name for target.
-my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule
-.PHONY : my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-octomap_msgs_generate_messages_eus: my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule
-
-.PHONY : octomap_msgs_generate_messages_eus
-
-# fast build rule for target.
-octomap_msgs_generate_messages_eus/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_eus.dir/build.make my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_eus.dir/build
-.PHONY : octomap_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_py.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_py.dir/rule
-.PHONY : my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-map_msgs_generate_messages_py: my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_py.dir/rule
-
-.PHONY : map_msgs_generate_messages_py
-
-# fast build rule for target.
-map_msgs_generate_messages_py/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_py.dir/build.make my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_py.dir/build
-.PHONY : map_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_py.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_py.dir/rule
-.PHONY : my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-octomap_msgs_generate_messages_py: my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_py.dir/rule
-
-.PHONY : octomap_msgs_generate_messages_py
-
-# fast build rule for target.
-octomap_msgs_generate_messages_py/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_py.dir/build.make my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_py.dir/build
-.PHONY : octomap_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule
-.PHONY : my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-octomap_msgs_generate_messages_lisp: my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : octomap_msgs_generate_messages_lisp
-
-# fast build rule for target.
-octomap_msgs_generate_messages_lisp/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/build.make my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/build
-.PHONY : octomap_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_eus.dir/rule:
@@ -331,19 +196,79 @@ map_msgs_generate_messages_eus/fast:
 .PHONY : map_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule
-.PHONY : my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule
+my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_nodejs.dir/rule
+.PHONY : my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-octomap_msgs_generate_messages_nodejs: my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule
+map_msgs_generate_messages_nodejs: my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : octomap_msgs_generate_messages_nodejs
+.PHONY : map_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-octomap_msgs_generate_messages_nodejs/fast:
-	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/build.make my_grid_map_tutorial/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/build
-.PHONY : octomap_msgs_generate_messages_nodejs/fast
+map_msgs_generate_messages_nodejs/fast:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_nodejs.dir/build.make my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_nodejs.dir/build
+.PHONY : map_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+my_grid_map_tutorial/CMakeFiles/simple_demo_node.dir/rule:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_grid_map_tutorial/CMakeFiles/simple_demo_node.dir/rule
+.PHONY : my_grid_map_tutorial/CMakeFiles/simple_demo_node.dir/rule
+
+# Convenience name for target.
+simple_demo_node: my_grid_map_tutorial/CMakeFiles/simple_demo_node.dir/rule
+
+.PHONY : simple_demo_node
+
+# fast build rule for target.
+simple_demo_node/fast:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_grid_map_tutorial/CMakeFiles/simple_demo_node.dir/build.make my_grid_map_tutorial/CMakeFiles/simple_demo_node.dir/build
+.PHONY : simple_demo_node/fast
+
+# Convenience name for target.
+my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_cpp.dir/rule:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_cpp.dir/rule
+.PHONY : my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+map_msgs_generate_messages_cpp: my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : map_msgs_generate_messages_cpp
+
+# fast build rule for target.
+map_msgs_generate_messages_cpp/fast:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_cpp.dir/build.make my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_cpp.dir/build
+.PHONY : map_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_py.dir/rule:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_py.dir/rule
+.PHONY : my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+map_msgs_generate_messages_py: my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_py.dir/rule
+
+.PHONY : map_msgs_generate_messages_py
+
+# fast build rule for target.
+map_msgs_generate_messages_py/fast:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_py.dir/build.make my_grid_map_tutorial/CMakeFiles/map_msgs_generate_messages_py.dir/build
+.PHONY : map_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+my_grid_map_tutorial/CMakeFiles/receive_point_cloud.dir/rule:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_grid_map_tutorial/CMakeFiles/receive_point_cloud.dir/rule
+.PHONY : my_grid_map_tutorial/CMakeFiles/receive_point_cloud.dir/rule
+
+# Convenience name for target.
+receive_point_cloud: my_grid_map_tutorial/CMakeFiles/receive_point_cloud.dir/rule
+
+.PHONY : receive_point_cloud
+
+# fast build rule for target.
+receive_point_cloud/fast:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f my_grid_map_tutorial/CMakeFiles/receive_point_cloud.dir/build.make my_grid_map_tutorial/CMakeFiles/receive_point_cloud.dir/build
+.PHONY : receive_point_cloud/fast
 
 src/receive_point_cloud.o: src/receive_point_cloud.cpp.o
 
@@ -407,23 +332,18 @@ help:
 	@echo "... depend"
 	@echo "... install"
 	@echo "... edit_cache"
-	@echo "... test"
-	@echo "... install/local"
-	@echo "... receive_point_cloud"
 	@echo "... map_msgs_generate_messages_lisp"
-	@echo "... map_msgs_generate_messages_nodejs"
-	@echo "... map_msgs_generate_messages_cpp"
-	@echo "... octomap_msgs_generate_messages_cpp"
-	@echo "... simple_demo_node"
-	@echo "... octomap_msgs_generate_messages_eus"
-	@echo "... map_msgs_generate_messages_py"
-	@echo "... list_install_components"
-	@echo "... install/strip"
-	@echo "... octomap_msgs_generate_messages_py"
-	@echo "... octomap_msgs_generate_messages_lisp"
 	@echo "... rebuild_cache"
 	@echo "... map_msgs_generate_messages_eus"
-	@echo "... octomap_msgs_generate_messages_nodejs"
+	@echo "... map_msgs_generate_messages_nodejs"
+	@echo "... simple_demo_node"
+	@echo "... test"
+	@echo "... map_msgs_generate_messages_cpp"
+	@echo "... map_msgs_generate_messages_py"
+	@echo "... receive_point_cloud"
+	@echo "... list_install_components"
+	@echo "... install/strip"
+	@echo "... install/local"
 	@echo "... src/receive_point_cloud.o"
 	@echo "... src/receive_point_cloud.i"
 	@echo "... src/receive_point_cloud.s"

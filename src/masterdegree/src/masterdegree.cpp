@@ -56,7 +56,7 @@ public:
         transform_1 = Eigen::Matrix4f::Identity();
         transform_1(2,3) = 0.8;
         transform_2 = Eigen::Matrix4f::Identity();
-        transform_2(1,1) = -1;
+        //transform_2(1,1) = -1;
     }
 
     void orientationcallback(std_msgs::Float32MultiArray sensorimu){
@@ -98,16 +98,11 @@ public:
         printf("Original Point Cloud Size = %d\n",cloud.width * cloud.height); 
         printf("After filtering nans = %d\n",cloud_filtered.width * cloud_filtered.height);
         //PassThrough Filter
-        //z
-        pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloudPTR(new pcl::PointCloud<pcl::PointXYZRGBA>);
-        cloudPTR = cloud_filtered.makeShared();
-        pcl::PassThrough<pcl::PointXYZRGBA> pass;
-        pass.setInputCloud(cloudPTR);
-        pass.setFilterFieldName("z");
-        pass.setFilterLimits(0,1.5);
-        pass.filter(cloud_filtered);
+        
         //printf("After Pass Through Filter = %d\n",cloud_filtered.width * cloud_filtered.height);
         //x
+        pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloudPTR(new pcl::PointCloud<pcl::PointXYZRGBA>);
+        pcl::PassThrough<pcl::PointXYZRGBA> pass;
         cloudPTR = cloud_filtered.makeShared();
         pass.setInputCloud(cloudPTR);
         pass.setFilterFieldName("x");
@@ -119,7 +114,7 @@ public:
         pcl::VoxelGrid<pcl::PointXYZRGBA> sor;
         cloudPTR = cloud_filtered.makeShared();
         sor.setInputCloud(cloudPTR);
-        sor.setLeafSize(0.02f, 0.02f, 0.02f);
+        sor.setLeafSize(0.01f, 0.01f, 0.01f);
         sor.filter(cloud_filtered);
         printf("After Voxel Grid Filter = %d\n",cloud_filtered.width * cloud_filtered.height);
         //Transform View
@@ -140,7 +135,12 @@ public:
         //pcl::io::savePCDFileASCII("Transformado.pcd", cloud_filtered);
         pcl::transformPointCloud(cloud_filtered,cloud_filtered,transform_1);
         pcl::transformPointCloud(cloud_filtered,cloud_filtered,transform_2);
-        
+        //y
+        cloudPTR = cloud_filtered.makeShared();
+        pass.setInputCloud(cloudPTR);
+        pass.setFilterFieldName("y");
+        pass.setFilterLimits(-1.5,0);
+        pass.filter(cloud_filtered);
         // RANSAC
         // create the Segmentation object
         pcl::SACSegmentation<pcl::PointXYZRGBA> seg;

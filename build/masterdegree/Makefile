@@ -166,6 +166,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+masterdegree/CMakeFiles/save_pcd.dir/rule:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/save_pcd.dir/rule
+.PHONY : masterdegree/CMakeFiles/save_pcd.dir/rule
+
+# Convenience name for target.
+save_pcd: masterdegree/CMakeFiles/save_pcd.dir/rule
+
+.PHONY : save_pcd
+
+# fast build rule for target.
+save_pcd/fast:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/save_pcd.dir/build.make masterdegree/CMakeFiles/save_pcd.dir/build
+.PHONY : save_pcd/fast
+
+# Convenience name for target.
 masterdegree/CMakeFiles/kinectxyz.dir/rule:
 	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/kinectxyz.dir/rule
 .PHONY : masterdegree/CMakeFiles/kinectxyz.dir/rule
@@ -254,6 +269,21 @@ masterdegree_cpp: masterdegree/CMakeFiles/masterdegree_cpp.dir/rule
 masterdegree_cpp/fast:
 	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/masterdegree_cpp.dir/build.make masterdegree/CMakeFiles/masterdegree_cpp.dir/build
 .PHONY : masterdegree_cpp/fast
+
+# Convenience name for target.
+masterdegree/CMakeFiles/vitor_code.dir/rule:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 masterdegree/CMakeFiles/vitor_code.dir/rule
+.PHONY : masterdegree/CMakeFiles/vitor_code.dir/rule
+
+# Convenience name for target.
+vitor_code: masterdegree/CMakeFiles/vitor_code.dir/rule
+
+.PHONY : vitor_code
+
+# fast build rule for target.
+vitor_code/fast:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/vitor_code.dir/build.make masterdegree/CMakeFiles/vitor_code.dir/build
+.PHONY : vitor_code/fast
 
 # Convenience name for target.
 masterdegree/CMakeFiles/pcl_publisher_cpp.dir/rule:
@@ -573,6 +603,33 @@ src/play_video.cpp.s:
 	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/play_video_cpp.dir/build.make masterdegree/CMakeFiles/play_video_cpp.dir/src/play_video.cpp.s
 .PHONY : src/play_video.cpp.s
 
+src/save_pcd.o: src/save_pcd.cpp.o
+
+.PHONY : src/save_pcd.o
+
+# target to build an object file
+src/save_pcd.cpp.o:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/save_pcd.dir/build.make masterdegree/CMakeFiles/save_pcd.dir/src/save_pcd.cpp.o
+.PHONY : src/save_pcd.cpp.o
+
+src/save_pcd.i: src/save_pcd.cpp.i
+
+.PHONY : src/save_pcd.i
+
+# target to preprocess a source file
+src/save_pcd.cpp.i:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/save_pcd.dir/build.make masterdegree/CMakeFiles/save_pcd.dir/src/save_pcd.cpp.i
+.PHONY : src/save_pcd.cpp.i
+
+src/save_pcd.s: src/save_pcd.cpp.s
+
+.PHONY : src/save_pcd.s
+
+# target to generate assembly for a file
+src/save_pcd.cpp.s:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/save_pcd.dir/build.make masterdegree/CMakeFiles/save_pcd.dir/src/save_pcd.cpp.s
+.PHONY : src/save_pcd.cpp.s
+
 src/transform_one_point.o: src/transform_one_point.cpp.o
 
 .PHONY : src/transform_one_point.o
@@ -627,6 +684,33 @@ src/transform_view.cpp.s:
 	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/transform_view_cpp.dir/build.make masterdegree/CMakeFiles/transform_view_cpp.dir/src/transform_view.cpp.s
 .PHONY : src/transform_view.cpp.s
 
+src/vitor_code.o: src/vitor_code.cpp.o
+
+.PHONY : src/vitor_code.o
+
+# target to build an object file
+src/vitor_code.cpp.o:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/vitor_code.dir/build.make masterdegree/CMakeFiles/vitor_code.dir/src/vitor_code.cpp.o
+.PHONY : src/vitor_code.cpp.o
+
+src/vitor_code.i: src/vitor_code.cpp.i
+
+.PHONY : src/vitor_code.i
+
+# target to preprocess a source file
+src/vitor_code.cpp.i:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/vitor_code.dir/build.make masterdegree/CMakeFiles/vitor_code.dir/src/vitor_code.cpp.i
+.PHONY : src/vitor_code.cpp.i
+
+src/vitor_code.s: src/vitor_code.cpp.s
+
+.PHONY : src/vitor_code.s
+
+# target to generate assembly for a file
+src/vitor_code.cpp.s:
+	cd /home/robotica/catkin_ws/build && $(MAKE) -f masterdegree/CMakeFiles/vitor_code.dir/build.make masterdegree/CMakeFiles/vitor_code.dir/src/vitor_code.cpp.s
+.PHONY : src/vitor_code.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -637,6 +721,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... install/local"
+	@echo "... save_pcd"
 	@echo "... kinectxyz"
 	@echo "... pcl_write_cpp"
 	@echo "... filters_cpp"
@@ -644,6 +729,7 @@ help:
 	@echo "... pcl_filter_cpp"
 	@echo "... masterdegree_cpp"
 	@echo "... rebuild_cache"
+	@echo "... vitor_code"
 	@echo "... pcl_publisher_cpp"
 	@echo "... transform_one_point"
 	@echo "... list_install_components"
@@ -678,12 +764,18 @@ help:
 	@echo "... src/play_video.o"
 	@echo "... src/play_video.i"
 	@echo "... src/play_video.s"
+	@echo "... src/save_pcd.o"
+	@echo "... src/save_pcd.i"
+	@echo "... src/save_pcd.s"
 	@echo "... src/transform_one_point.o"
 	@echo "... src/transform_one_point.i"
 	@echo "... src/transform_one_point.s"
 	@echo "... src/transform_view.o"
 	@echo "... src/transform_view.i"
 	@echo "... src/transform_view.s"
+	@echo "... src/vitor_code.o"
+	@echo "... src/vitor_code.i"
+	@echo "... src/vitor_code.s"
 .PHONY : help
 
 

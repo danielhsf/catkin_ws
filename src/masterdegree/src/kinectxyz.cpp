@@ -56,7 +56,7 @@ public:
         transform_1 = Eigen::Matrix4f::Identity();
         transform_1(2,3) = 0.8;
         transform_2 = Eigen::Matrix4f::Identity();
-        transform_2(1,1) = -1;
+        //transform_2(1,1) = -1;
     }
 
     void orientationcallback(std_msgs::Float32MultiArray sensorimu){
@@ -73,9 +73,9 @@ public:
         // pitch (y-axis rotation)
         double sinp = +2.0 * (orientation.w() * orientation.y() - orientation.z() * orientation.x());
         if (fabs(sinp) >= 1)
-	        pitch = copysign(M_PI / 2, sinp); // use 90 degrees if out of range
+	        pitch = copysign(M_PI / 2, sinp)- 2*M_PI/180; // use 90 degrees if out of range
         else
-	        pitch = asin(sinp);
+	        pitch = asin(sinp)- 2*M_PI/180;
         //pitch = 0;
         // yaw (z-axis rotation)
         //float siny_cosp = +2.0 * (orientation.w() * orientation.z() + orientation.x() * orientation.y());
@@ -98,23 +98,16 @@ public:
         printf("Original Point Cloud Size = %d\n",cloud.width * cloud.height); 
         printf("After filtering nans = %d\n",cloud_filtered.width * cloud_filtered.height);
         //PassThrough Filter
-        //z
-        pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloudPTR(new pcl::PointCloud<pcl::PointXYZRGBA>);
-        cloudPTR = cloud_filtered.makeShared();
-        pcl::PassThrough<pcl::PointXYZRGBA> pass;
-        pass.setInputCloud(cloudPTR);
-        pass.setFilterFieldName("z");
-        pass.setFilterLimits(0,1.5);
-        pass.filter(cloud_filtered);
         //printf("After Pass Through Filter = %d\n",cloud_filtered.width * cloud_filtered.height);
         //x
+        pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloudPTR(new pcl::PointCloud<pcl::PointXYZRGBA>);
+        pcl::PassThrough<pcl::PointXYZRGBA> pass;
         cloudPTR = cloud_filtered.makeShared();
         pass.setInputCloud(cloudPTR);
         pass.setFilterFieldName("x");
         pass.setFilterLimits(-0.3,0.3);
         pass.filter(cloud_filtered);
         printf("After Pass Through Filter = %d\n",cloud_filtered.width * cloud_filtered.height);
-        
         //Voxel Grid
         //pcl::VoxelGrid<pcl::PointXYZRGBA> sor;
         //cloudPTR = cloud_filtered.makeShared();
@@ -140,12 +133,20 @@ public:
         //pcl::io::savePCDFileASCII("Transformado.pcd", cloud_filtered);
         pcl::transformPointCloud(cloud_filtered,cloud_filtered,transform_1);
         pcl::transformPointCloud(cloud_filtered,cloud_filtered,transform_2);
+        
+        cloudPTR = cloud_filtered.makeShared();
+        pass.setInputCloud(cloudPTR);
+        pass.setFilterFieldName("y");
+        pass.setFilterLimits(-1.5,0);
+        pass.filter(cloud_filtered);
+        
         //output
         pcl::toROSMsg(cloud_filtered, output);
     	output.header.frame_id = "point_cloud";
         //pcl::io::savePCDFileASCII("filtrado.pcd", cloud_filtered);
         
         pcl_pub.publish(output);
+        
     }
 
 protected:

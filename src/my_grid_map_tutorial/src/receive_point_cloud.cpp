@@ -11,6 +11,10 @@
 #include <pcl/surface/gp3.h>
 #include <pcl/kdtree/kdtree_flann.h>
 #include <pcl/features/normal_3d.h>
+#include <pcl/filters/voxel_grid.h>
+// Header for removing NaNs
+#include <pcl/filters/filter.h>
+
 
 using namespace grid_map;
 
@@ -19,17 +23,22 @@ class cloudHandler
 public:
     cloudHandler()
     {
-        pcl_sub = nh.subscribe("/camera/depth_registered/points", 10, &cloudHandler::cloudCB, this);
+        //pcl_sub = nh.subscribe("/pcl_filtered", 10, &cloudHandler::cloudCB, this);
+        pcl_sub = nh.subscribe("/pcl_filtered", 10, &cloudHandler::cloudCB, this);
         pcl_pub = nh.advertise<grid_map_msgs::GridMap>("grid_map", 1, true);
     }
 
     void cloudCB(const sensor_msgs::PointCloud2& input)
     {
-        pcl::PointCloud<pcl::PointXYZ> cloud_in;
-        sensor_msgs::PointCloud2 output;
-        pcl::fromROSMsg(input, cloud_in);
         pcl::PointCloud<pcl::PointXYZ>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZ>);
-        cloud = cloud_in.makeShared();
+        pcl::fromROSMsg(input, *cloud);
+        std::vector<int> indices;
+        pcl::removeNaNFromPointCloud(*cloud,*cloud,indices);
+        // Create the filtering object
+        //pcl::VoxelGrid<pcl::PointXYZ> sor;
+        //sor.setInputCloud(cloud);
+        //sor.setLeafSize(0.01f, 0.01f, 0.01f);
+        //sor.filter(*cloud);
         // Normal estimation*
         pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> n;
         pcl::PointCloud<pcl::Normal>::Ptr normals (new pcl::PointCloud<pcl::Normal>);
@@ -72,9 +81,13 @@ public:
         //Grid Map
         GridMap map({"elevation"});
         map.setFrameId("map");
-        GridMapPclConverter::
         GridMapPclConverter::initializeFromPolygonMesh(triangles,0.01, map);
-        GridMapPclConverter::addLayerFromPolygonMesh(triangles,"first",map);
+        for (GridMapIterator it(map); !it.isPastEnd(); ++it) {
+        Position position;
+        map.getPosition(*it, position);
+        map.at("elevation", *it) = 0;
+        }
+        GridMapPclConverter::addLayerFromPolygonMesh(triangles,"elevation",map);
         grid_map_msgs::GridMap message;
         GridMapRosConverter::toMessage(map, message);
         pcl_pub.publish(message);

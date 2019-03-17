@@ -33,6 +33,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
+find_package(octomap REQUIRED)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -123,7 +124,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES my_grid_map_tutorial
-#  CATKIN_DEPENDS cv_bridge filters geometry_msgs grid_map_core grid_map_cv grid_map_filters grid_map_loader grid_map_msgs grid_map_octomap grid_map_ros grid_map_rviz_plugin grid_map_visualization grid_map_pcl octomap_msgs roscpp sensor_msgs pcl_conversions pcl_ros
+#  CATKIN_DEPENDS cv_bridge filters geometry_msgs grid_map_demos grid_map_core grid_map_cv grid_map_filters grid_map_loader grid_map_msgs grid_map_octomap grid_map_ros grid_map_rviz_plugin grid_map_visualization grid_map_pcl octomap_msgs roscpp sensor_msgs pcl_conversions pcl_ros
 #  DEPENDS system_lib
 )
 
@@ -136,6 +137,8 @@ catkin_package(
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
+  ${EIGEN3_INCLUDE_DIR}
+  ${OCTOMAP_INCLUDE_DIR}
 )
 
 ## Declare a C++ library
@@ -221,4 +224,6 @@ target_link_libraries( simple_demo_node ${catkin_LIBRARIES})
 
 add_executable(receive_point_cloud src/receive_point_cloud.cpp)
 target_link_libraries( receive_point_cloud ${catkin_LIBRARIES})
+
+
 
