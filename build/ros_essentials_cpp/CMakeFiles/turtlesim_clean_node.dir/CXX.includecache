@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/robotica/catkin_ws/src/ros_essentials_cpp/src/topic02_motion/turtlesim/robot_cleaner.cpp
+/home/daniel/catkin_ws/src/ros_essentials_cpp/src/topic02_motion/turtlesim/robot_cleaner.cpp
 ros/ros.h
-/home/robotica/catkin_ws/src/ros_essentials_cpp/src/topic02_motion/turtlesim/ros/ros.h
+/home/daniel/catkin_ws/src/ros_essentials_cpp/src/topic02_motion/turtlesim/ros/ros.h
 geometry_msgs/Twist.h
-/home/robotica/catkin_ws/src/ros_essentials_cpp/src/topic02_motion/turtlesim/geometry_msgs/Twist.h
+/home/daniel/catkin_ws/src/ros_essentials_cpp/src/topic02_motion/turtlesim/geometry_msgs/Twist.h
 turtlesim/Pose.h
-/home/robotica/catkin_ws/src/ros_essentials_cpp/src/topic02_motion/turtlesim/turtlesim/Pose.h
+/home/daniel/catkin_ws/src/ros_essentials_cpp/src/topic02_motion/turtlesim/turtlesim/Pose.h
 sstream
 -
 

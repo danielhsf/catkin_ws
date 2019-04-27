@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/robotica/catkin_ws/src/cv_bridge_tutorial_pkg/src/sample_cv_bridge_node.cpp
+/home/daniel/catkin_ws/src/cv_bridge_tutorial_pkg/src/sample_cv_bridge_node.cpp
 ros/ros.h
 -
 image_transport/image_transport.h

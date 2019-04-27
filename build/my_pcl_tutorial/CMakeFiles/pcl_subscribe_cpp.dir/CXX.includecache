@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/robotica/catkin_ws/src/my_pcl_tutorial/src/pcl_subscribe.cpp
+/home/daniel/catkin_ws/src/my_pcl_tutorial/src/pcl_subscribe.cpp
 ros/ros.h
 -
 std_msgs/Float32MultiArray.h

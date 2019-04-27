@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/robotica/catkin_ws/src/ros_essentials_cpp/src/topic03_perception/cpp/open_copy.cpp
+/home/daniel/catkin_ws/src/ros_essentials_cpp/src/topic03_perception/cpp/open_copy.cpp
 highgui.h
 -
 opencv2/imgproc/imgproc.hpp
@@ -14,7 +14,7 @@ opencv2/imgproc/imgproc.hpp
 stdio.h
 -
 opencv2/opencv.hpp
-/home/robotica/catkin_ws/src/ros_essentials_cpp/src/topic03_perception/cpp/opencv2/opencv.hpp
+/home/daniel/catkin_ws/src/ros_essentials_cpp/src/topic03_perception/cpp/opencv2/opencv.hpp
 
 /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv/cxcore.h
 opencv2/core/core_c.h

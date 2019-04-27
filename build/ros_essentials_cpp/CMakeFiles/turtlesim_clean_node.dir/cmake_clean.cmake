@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/turtlesim_clean_node.dir/src/topic02_motion/turtlesim/robot_cleaner.cpp.o"
-  "/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/turtlesim_clean_node.pdb"
-  "/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/turtlesim_clean_node"
+  "/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/turtlesim_clean_node.pdb"
+  "/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/turtlesim_clean_node"
 )
 
 # Per-language clean rules from dependency scanning.

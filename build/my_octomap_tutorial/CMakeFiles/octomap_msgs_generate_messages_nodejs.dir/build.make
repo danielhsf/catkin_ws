@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/robotica/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/daniel/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/robotica/catkin_ws/build
+CMAKE_BINARY_DIR = /home/daniel/catkin_ws/build
 
 # Utility rule file for octomap_msgs_generate_messages_nodejs.
 
@@ -63,10 +63,10 @@ my_octomap_tutorial/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/build: 
 .PHONY : my_octomap_tutorial/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/build
 
 my_octomap_tutorial/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/clean:
-	cd /home/robotica/catkin_ws/build/my_octomap_tutorial && $(CMAKE_COMMAND) -P CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/daniel/catkin_ws/build/my_octomap_tutorial && $(CMAKE_COMMAND) -P CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : my_octomap_tutorial/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/clean
 
 my_octomap_tutorial/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/depend:
-	cd /home/robotica/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/robotica/catkin_ws/src /home/robotica/catkin_ws/src/my_octomap_tutorial /home/robotica/catkin_ws/build /home/robotica/catkin_ws/build/my_octomap_tutorial /home/robotica/catkin_ws/build/my_octomap_tutorial/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/daniel/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/daniel/catkin_ws/src /home/daniel/catkin_ws/src/my_octomap_tutorial /home/daniel/catkin_ws/build /home/daniel/catkin_ws/build/my_octomap_tutorial /home/daniel/catkin_ws/build/my_octomap_tutorial/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : my_octomap_tutorial/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/depend
 

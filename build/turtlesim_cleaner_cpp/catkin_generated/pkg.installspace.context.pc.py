@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "turtlesim_cleaner_cpp"
-PROJECT_SPACE_DIR = "/home/robotica/catkin_ws/install"
+PROJECT_SPACE_DIR = "/home/daniel/catkin_ws/install"
 PROJECT_VERSION = "0.0.0"

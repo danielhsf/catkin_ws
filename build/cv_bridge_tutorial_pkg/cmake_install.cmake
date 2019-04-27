@@ -1,8 +1,8 @@
-# Install script for directory: /home/robotica/catkin_ws/src/cv_bridge_tutorial_pkg
+# Install script for directory: /home/daniel/catkin_ws/src/cv_bridge_tutorial_pkg
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/robotica/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/daniel/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/robotica/catkin_ws/build/cv_bridge_tutorial_pkg/catkin_generated/installspace/cv_bridge_tutorial_pkg.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/daniel/catkin_ws/build/cv_bridge_tutorial_pkg/catkin_generated/installspace/cv_bridge_tutorial_pkg.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cv_bridge_tutorial_pkg/cmake" TYPE FILE FILES
-    "/home/robotica/catkin_ws/build/cv_bridge_tutorial_pkg/catkin_generated/installspace/cv_bridge_tutorial_pkgConfig.cmake"
-    "/home/robotica/catkin_ws/build/cv_bridge_tutorial_pkg/catkin_generated/installspace/cv_bridge_tutorial_pkgConfig-version.cmake"
+    "/home/daniel/catkin_ws/build/cv_bridge_tutorial_pkg/catkin_generated/installspace/cv_bridge_tutorial_pkgConfig.cmake"
+    "/home/daniel/catkin_ws/build/cv_bridge_tutorial_pkg/catkin_generated/installspace/cv_bridge_tutorial_pkgConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cv_bridge_tutorial_pkg" TYPE FILE FILES "/home/robotica/catkin_ws/src/cv_bridge_tutorial_pkg/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cv_bridge_tutorial_pkg" TYPE FILE FILES "/home/daniel/catkin_ws/src/cv_bridge_tutorial_pkg/package.xml")
 endif()
 

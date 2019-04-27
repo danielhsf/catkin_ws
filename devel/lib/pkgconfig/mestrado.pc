@@ -1,0 +1,8 @@
+prefix=/home/daniel/catkin_ws/devel
+
+Name: mestrado
+Description: Description of mestrado
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/daniel/catkin_ws/devel/lib 
+Requires: 

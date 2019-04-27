@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/robotica/catkin_ws/src/my_grid_map_tutorial/src/receive_point_cloud.cpp
+/home/daniel/catkin_ws/src/my_grid_map_tutorial/src/receive_point_cloud.cpp
 ros/ros.h
 -
 pcl/point_cloud.h

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/robotica/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/daniel/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/robotica/catkin_ws/build
+CMAKE_BINARY_DIR = /home/daniel/catkin_ws/build
 
 # Utility rule file for std_srvs_generate_messages_py.
 
@@ -63,10 +63,10 @@ cloud_to_map/CMakeFiles/std_srvs_generate_messages_py.dir/build: std_srvs_genera
 .PHONY : cloud_to_map/CMakeFiles/std_srvs_generate_messages_py.dir/build
 
 cloud_to_map/CMakeFiles/std_srvs_generate_messages_py.dir/clean:
-	cd /home/robotica/catkin_ws/build/cloud_to_map && $(CMAKE_COMMAND) -P CMakeFiles/std_srvs_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/daniel/catkin_ws/build/cloud_to_map && $(CMAKE_COMMAND) -P CMakeFiles/std_srvs_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : cloud_to_map/CMakeFiles/std_srvs_generate_messages_py.dir/clean
 
 cloud_to_map/CMakeFiles/std_srvs_generate_messages_py.dir/depend:
-	cd /home/robotica/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/robotica/catkin_ws/src /home/robotica/catkin_ws/src/cloud_to_map /home/robotica/catkin_ws/build /home/robotica/catkin_ws/build/cloud_to_map /home/robotica/catkin_ws/build/cloud_to_map/CMakeFiles/std_srvs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/daniel/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/daniel/catkin_ws/src /home/daniel/catkin_ws/src/cloud_to_map /home/daniel/catkin_ws/build /home/daniel/catkin_ws/build/cloud_to_map /home/daniel/catkin_ws/build/cloud_to_map/CMakeFiles/std_srvs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : cloud_to_map/CMakeFiles/std_srvs_generate_messages_py.dir/depend
 

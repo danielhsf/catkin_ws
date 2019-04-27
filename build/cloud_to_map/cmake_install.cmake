@@ -1,8 +1,8 @@
-# Install script for directory: /home/robotica/catkin_ws/src/cloud_to_map
+# Install script for directory: /home/daniel/catkin_ws/src/cloud_to_map
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/robotica/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/daniel/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,33 +33,33 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/cloud_to_map" TYPE FILE FILES "/home/robotica/catkin_ws/devel/include/cloud_to_map/cloud_to_map_nodeConfig.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/cloud_to_map" TYPE FILE FILES "/home/daniel/catkin_ws/devel/include/cloud_to_map/cloud_to_map_nodeConfig.h")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/cloud_to_map" TYPE FILE FILES "/home/robotica/catkin_ws/devel/lib/python2.7/dist-packages/cloud_to_map/__init__.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/cloud_to_map" TYPE FILE FILES "/home/daniel/catkin_ws/devel/lib/python2.7/dist-packages/cloud_to_map/__init__.py")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/robotica/catkin_ws/devel/lib/python2.7/dist-packages/cloud_to_map/cfg")
+  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/daniel/catkin_ws/devel/lib/python2.7/dist-packages/cloud_to_map/cfg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/cloud_to_map" TYPE DIRECTORY FILES "/home/robotica/catkin_ws/devel/lib/python2.7/dist-packages/cloud_to_map/cfg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/cloud_to_map" TYPE DIRECTORY FILES "/home/daniel/catkin_ws/devel/lib/python2.7/dist-packages/cloud_to_map/cfg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/robotica/catkin_ws/build/cloud_to_map/catkin_generated/installspace/cloud_to_map.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/daniel/catkin_ws/build/cloud_to_map/catkin_generated/installspace/cloud_to_map.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cloud_to_map/cmake" TYPE FILE FILES
-    "/home/robotica/catkin_ws/build/cloud_to_map/catkin_generated/installspace/cloud_to_mapConfig.cmake"
-    "/home/robotica/catkin_ws/build/cloud_to_map/catkin_generated/installspace/cloud_to_mapConfig-version.cmake"
+    "/home/daniel/catkin_ws/build/cloud_to_map/catkin_generated/installspace/cloud_to_mapConfig.cmake"
+    "/home/daniel/catkin_ws/build/cloud_to_map/catkin_generated/installspace/cloud_to_mapConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cloud_to_map" TYPE FILE FILES "/home/robotica/catkin_ws/src/cloud_to_map/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cloud_to_map" TYPE FILE FILES "/home/daniel/catkin_ws/src/cloud_to_map/package.xml")
 endif()
 

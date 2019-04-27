@@ -1,2 +1,2 @@
-cloud_to_map:cv_bridge_tutorial_pkg:grade:masterdegree:my_grid_map_tutorial:my_octomap_tutorial:my_pcl_tutorial:programming_robots_with_ros:ros_basic_tutorials:ros_essentials_cpp:turtlesim_cleaner_cpp
--DCATKIN_DEVEL_PREFIX=/home/robotica/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/robotica/catkin_ws/install -G Unix Makefiles
+cloud_to_map:cv_bridge_tutorial_pkg:grade:mestrado:my_grid_map_tutorial:my_octomap_tutorial:my_pcl_tutorial:programming_robots_with_ros:ros_basic_tutorials:ros_essentials_cpp:turtlesim_cleaner_cpp
+-DCATKIN_DEVEL_PREFIX=/home/daniel/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/daniel/catkin_ws/install -G Unix Makefiles

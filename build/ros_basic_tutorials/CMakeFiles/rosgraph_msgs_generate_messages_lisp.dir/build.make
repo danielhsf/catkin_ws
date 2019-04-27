@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/robotica/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/daniel/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/robotica/catkin_ws/build
+CMAKE_BINARY_DIR = /home/daniel/catkin_ws/build
 
 # Utility rule file for rosgraph_msgs_generate_messages_lisp.
 
@@ -63,10 +63,10 @@ ros_basic_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build: r
 .PHONY : ros_basic_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 
 ros_basic_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean:
-	cd /home/robotica/catkin_ws/build/ros_basic_tutorials && $(CMAKE_COMMAND) -P CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /home/daniel/catkin_ws/build/ros_basic_tutorials && $(CMAKE_COMMAND) -P CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : ros_basic_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
 
 ros_basic_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/depend:
-	cd /home/robotica/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/robotica/catkin_ws/src /home/robotica/catkin_ws/src/ros_basic_tutorials /home/robotica/catkin_ws/build /home/robotica/catkin_ws/build/ros_basic_tutorials /home/robotica/catkin_ws/build/ros_basic_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/daniel/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/daniel/catkin_ws/src /home/daniel/catkin_ws/src/ros_basic_tutorials /home/daniel/catkin_ws/build /home/daniel/catkin_ws/build/ros_basic_tutorials /home/daniel/catkin_ws/build/ros_basic_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ros_basic_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/depend
 

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/robotica/catkin_ws/src/cv_bridge_tutorial_pkg/src/sample_cv_bridge_node.cpp" "/home/robotica/catkin_ws/build/cv_bridge_tutorial_pkg/CMakeFiles/sample_cv_bridge_node.dir/src/sample_cv_bridge_node.cpp.o"
+  "/home/daniel/catkin_ws/src/cv_bridge_tutorial_pkg/src/sample_cv_bridge_node.cpp" "/home/daniel/catkin_ws/build/cv_bridge_tutorial_pkg/CMakeFiles/sample_cv_bridge_node.dir/src/sample_cv_bridge_node.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

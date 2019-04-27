@@ -1,8 +1,8 @@
-# Install script for directory: /home/robotica/catkin_ws/src/ros_basic_tutorials
+# Install script for directory: /home/daniel/catkin_ws/src/ros_basic_tutorials
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/robotica/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/daniel/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,21 +33,21 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ros_basic_tutorials/msg" TYPE FILE FILES "/home/robotica/catkin_ws/src/ros_basic_tutorials/msg/IoTSensor.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ros_basic_tutorials/msg" TYPE FILE FILES "/home/daniel/catkin_ws/src/ros_basic_tutorials/msg/IoTSensor.msg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/robotica/catkin_ws/build/ros_basic_tutorials/catkin_generated/installspace/ros_basic_tutorials.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/daniel/catkin_ws/build/ros_basic_tutorials/catkin_generated/installspace/ros_basic_tutorials.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ros_basic_tutorials/cmake" TYPE FILE FILES
-    "/home/robotica/catkin_ws/build/ros_basic_tutorials/catkin_generated/installspace/ros_basic_tutorialsConfig.cmake"
-    "/home/robotica/catkin_ws/build/ros_basic_tutorials/catkin_generated/installspace/ros_basic_tutorialsConfig-version.cmake"
+    "/home/daniel/catkin_ws/build/ros_basic_tutorials/catkin_generated/installspace/ros_basic_tutorialsConfig.cmake"
+    "/home/daniel/catkin_ws/build/ros_basic_tutorials/catkin_generated/installspace/ros_basic_tutorialsConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ros_basic_tutorials" TYPE FILE FILES "/home/robotica/catkin_ws/src/ros_basic_tutorials/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ros_basic_tutorials" TYPE FILE FILES "/home/daniel/catkin_ws/src/ros_basic_tutorials/package.xml")
 endif()
 

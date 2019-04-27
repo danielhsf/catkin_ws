@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/robotica/catkin_ws/src/ros_essentials_cpp/src/topic03_perception/cpp/read_video.cpp" "/home/robotica/catkin_ws/build/ros_essentials_cpp/CMakeFiles/read_video_cpp.dir/src/topic03_perception/cpp/read_video.cpp.o"
+  "/home/daniel/catkin_ws/src/ros_essentials_cpp/src/topic03_perception/cpp/read_video.cpp" "/home/daniel/catkin_ws/build/ros_essentials_cpp/CMakeFiles/read_video_cpp.dir/src/topic03_perception/cpp/read_video.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,7 +17,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/robotica/catkin_ws/devel/include"
+  "/home/daniel/catkin_ws/devel/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/opt/ros/kinetic/include/opencv-3.3.1-dev"

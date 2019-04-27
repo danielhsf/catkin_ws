@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/robotica/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/daniel/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/robotica/catkin_ws/build
+CMAKE_BINARY_DIR = /home/daniel/catkin_ws/build
 
 # Include any dependencies generated for this target.
 include ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/depend.make
@@ -58,17 +58,17 @@ include ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/progress.make
 include ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/flags.make
 
 ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/src/topic01_basics/service/add_two_ints_client.cpp.o: ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/flags.make
-ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/src/topic01_basics/service/add_two_ints_client.cpp.o: /home/robotica/catkin_ws/src/ros_essentials_cpp/src/topic01_basics/service/add_two_ints_client.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robotica/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/src/topic01_basics/service/add_two_ints_client.cpp.o"
-	cd /home/robotica/catkin_ws/build/ros_essentials_cpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/add_two_ints_client.dir/src/topic01_basics/service/add_two_ints_client.cpp.o -c /home/robotica/catkin_ws/src/ros_essentials_cpp/src/topic01_basics/service/add_two_ints_client.cpp
+ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/src/topic01_basics/service/add_two_ints_client.cpp.o: /home/daniel/catkin_ws/src/ros_essentials_cpp/src/topic01_basics/service/add_two_ints_client.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daniel/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/src/topic01_basics/service/add_two_ints_client.cpp.o"
+	cd /home/daniel/catkin_ws/build/ros_essentials_cpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/add_two_ints_client.dir/src/topic01_basics/service/add_two_ints_client.cpp.o -c /home/daniel/catkin_ws/src/ros_essentials_cpp/src/topic01_basics/service/add_two_ints_client.cpp
 
 ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/src/topic01_basics/service/add_two_ints_client.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/add_two_ints_client.dir/src/topic01_basics/service/add_two_ints_client.cpp.i"
-	cd /home/robotica/catkin_ws/build/ros_essentials_cpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/robotica/catkin_ws/src/ros_essentials_cpp/src/topic01_basics/service/add_two_ints_client.cpp > CMakeFiles/add_two_ints_client.dir/src/topic01_basics/service/add_two_ints_client.cpp.i
+	cd /home/daniel/catkin_ws/build/ros_essentials_cpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniel/catkin_ws/src/ros_essentials_cpp/src/topic01_basics/service/add_two_ints_client.cpp > CMakeFiles/add_two_ints_client.dir/src/topic01_basics/service/add_two_ints_client.cpp.i
 
 ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/src/topic01_basics/service/add_two_ints_client.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/add_two_ints_client.dir/src/topic01_basics/service/add_two_ints_client.cpp.s"
-	cd /home/robotica/catkin_ws/build/ros_essentials_cpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/robotica/catkin_ws/src/ros_essentials_cpp/src/topic01_basics/service/add_two_ints_client.cpp -o CMakeFiles/add_two_ints_client.dir/src/topic01_basics/service/add_two_ints_client.cpp.s
+	cd /home/daniel/catkin_ws/build/ros_essentials_cpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniel/catkin_ws/src/ros_essentials_cpp/src/topic01_basics/service/add_two_ints_client.cpp -o CMakeFiles/add_two_ints_client.dir/src/topic01_basics/service/add_two_ints_client.cpp.s
 
 ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/src/topic01_basics/service/add_two_ints_client.cpp.o.requires:
 
@@ -88,48 +88,48 @@ add_two_ints_client_OBJECTS = \
 # External object files for target add_two_ints_client
 add_two_ints_client_EXTERNAL_OBJECTS =
 
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/src/topic01_basics/service/add_two_ints_client.cpp.o
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/build.make
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/libcv_bridge.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/libimage_transport.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/libmessage_filters.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/libclass_loader.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/libPocoFoundation.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libdl.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/libroscpp.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/librosconsole.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/libroslib.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/librospack.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libpython2.7.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libtinyxml.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/librostime.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/libcpp_common.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/robotica/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client"
-	cd /home/robotica/catkin_ws/build/ros_essentials_cpp && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/add_two_ints_client.dir/link.txt --verbose=$(VERBOSE)
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/src/topic01_basics/service/add_two_ints_client.cpp.o
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/build.make
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/libcv_bridge.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/libimage_transport.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/libmessage_filters.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/libclass_loader.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/libPocoFoundation.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libdl.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/libroscpp.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/librosconsole.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/libroslib.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/librospack.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libtinyxml.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/librostime.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /opt/ros/kinetic/lib/libcpp_common.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client: ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/daniel/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client"
+	cd /home/daniel/catkin_ws/build/ros_essentials_cpp && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/add_two_ints_client.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/build: /home/robotica/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client
+ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/build: /home/daniel/catkin_ws/devel/lib/ros_essentials_cpp/add_two_ints_client
 
 .PHONY : ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/build
 
@@ -138,10 +138,10 @@ ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/requires: ros_essentials_c
 .PHONY : ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/requires
 
 ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/clean:
-	cd /home/robotica/catkin_ws/build/ros_essentials_cpp && $(CMAKE_COMMAND) -P CMakeFiles/add_two_ints_client.dir/cmake_clean.cmake
+	cd /home/daniel/catkin_ws/build/ros_essentials_cpp && $(CMAKE_COMMAND) -P CMakeFiles/add_two_ints_client.dir/cmake_clean.cmake
 .PHONY : ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/clean
 
 ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/depend:
-	cd /home/robotica/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/robotica/catkin_ws/src /home/robotica/catkin_ws/src/ros_essentials_cpp /home/robotica/catkin_ws/build /home/robotica/catkin_ws/build/ros_essentials_cpp /home/robotica/catkin_ws/build/ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/daniel/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/daniel/catkin_ws/src /home/daniel/catkin_ws/src/ros_essentials_cpp /home/daniel/catkin_ws/build /home/daniel/catkin_ws/build/ros_essentials_cpp /home/daniel/catkin_ws/build/ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ros_essentials_cpp/CMakeFiles/add_two_ints_client.dir/depend
 

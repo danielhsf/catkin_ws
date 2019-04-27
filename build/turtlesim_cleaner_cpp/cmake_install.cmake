@@ -1,8 +1,8 @@
-# Install script for directory: /home/robotica/catkin_ws/src/turtlesim_cleaner_cpp
+# Install script for directory: /home/daniel/catkin_ws/src/turtlesim_cleaner_cpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/robotica/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/daniel/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/robotica/catkin_ws/build/turtlesim_cleaner_cpp/catkin_generated/installspace/turtlesim_cleaner_cpp.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/daniel/catkin_ws/build/turtlesim_cleaner_cpp/catkin_generated/installspace/turtlesim_cleaner_cpp.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/turtlesim_cleaner_cpp/cmake" TYPE FILE FILES
-    "/home/robotica/catkin_ws/build/turtlesim_cleaner_cpp/catkin_generated/installspace/turtlesim_cleaner_cppConfig.cmake"
-    "/home/robotica/catkin_ws/build/turtlesim_cleaner_cpp/catkin_generated/installspace/turtlesim_cleaner_cppConfig-version.cmake"
+    "/home/daniel/catkin_ws/build/turtlesim_cleaner_cpp/catkin_generated/installspace/turtlesim_cleaner_cppConfig.cmake"
+    "/home/daniel/catkin_ws/build/turtlesim_cleaner_cpp/catkin_generated/installspace/turtlesim_cleaner_cppConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/turtlesim_cleaner_cpp" TYPE FILE FILES "/home/robotica/catkin_ws/src/turtlesim_cleaner_cpp/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/turtlesim_cleaner_cpp" TYPE FILE FILES "/home/daniel/catkin_ws/src/turtlesim_cleaner_cpp/package.xml")
 endif()
 

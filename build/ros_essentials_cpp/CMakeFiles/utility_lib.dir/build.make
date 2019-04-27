@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/robotica/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/daniel/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/robotica/catkin_ws/build
+CMAKE_BINARY_DIR = /home/daniel/catkin_ws/build
 
 # Include any dependencies generated for this target.
 include ros_essentials_cpp/CMakeFiles/utility_lib.dir/depend.make
@@ -58,17 +58,17 @@ include ros_essentials_cpp/CMakeFiles/utility_lib.dir/progress.make
 include ros_essentials_cpp/CMakeFiles/utility_lib.dir/flags.make
 
 ros_essentials_cpp/CMakeFiles/utility_lib.dir/src/topic04_perception02_laser/laserscan/utility_lib.cpp.o: ros_essentials_cpp/CMakeFiles/utility_lib.dir/flags.make
-ros_essentials_cpp/CMakeFiles/utility_lib.dir/src/topic04_perception02_laser/laserscan/utility_lib.cpp.o: /home/robotica/catkin_ws/src/ros_essentials_cpp/src/topic04_perception02_laser/laserscan/utility_lib.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robotica/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object ros_essentials_cpp/CMakeFiles/utility_lib.dir/src/topic04_perception02_laser/laserscan/utility_lib.cpp.o"
-	cd /home/robotica/catkin_ws/build/ros_essentials_cpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/utility_lib.dir/src/topic04_perception02_laser/laserscan/utility_lib.cpp.o -c /home/robotica/catkin_ws/src/ros_essentials_cpp/src/topic04_perception02_laser/laserscan/utility_lib.cpp
+ros_essentials_cpp/CMakeFiles/utility_lib.dir/src/topic04_perception02_laser/laserscan/utility_lib.cpp.o: /home/daniel/catkin_ws/src/ros_essentials_cpp/src/topic04_perception02_laser/laserscan/utility_lib.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daniel/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object ros_essentials_cpp/CMakeFiles/utility_lib.dir/src/topic04_perception02_laser/laserscan/utility_lib.cpp.o"
+	cd /home/daniel/catkin_ws/build/ros_essentials_cpp && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/utility_lib.dir/src/topic04_perception02_laser/laserscan/utility_lib.cpp.o -c /home/daniel/catkin_ws/src/ros_essentials_cpp/src/topic04_perception02_laser/laserscan/utility_lib.cpp
 
 ros_essentials_cpp/CMakeFiles/utility_lib.dir/src/topic04_perception02_laser/laserscan/utility_lib.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/utility_lib.dir/src/topic04_perception02_laser/laserscan/utility_lib.cpp.i"
-	cd /home/robotica/catkin_ws/build/ros_essentials_cpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/robotica/catkin_ws/src/ros_essentials_cpp/src/topic04_perception02_laser/laserscan/utility_lib.cpp > CMakeFiles/utility_lib.dir/src/topic04_perception02_laser/laserscan/utility_lib.cpp.i
+	cd /home/daniel/catkin_ws/build/ros_essentials_cpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniel/catkin_ws/src/ros_essentials_cpp/src/topic04_perception02_laser/laserscan/utility_lib.cpp > CMakeFiles/utility_lib.dir/src/topic04_perception02_laser/laserscan/utility_lib.cpp.i
 
 ros_essentials_cpp/CMakeFiles/utility_lib.dir/src/topic04_perception02_laser/laserscan/utility_lib.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/utility_lib.dir/src/topic04_perception02_laser/laserscan/utility_lib.cpp.s"
-	cd /home/robotica/catkin_ws/build/ros_essentials_cpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/robotica/catkin_ws/src/ros_essentials_cpp/src/topic04_perception02_laser/laserscan/utility_lib.cpp -o CMakeFiles/utility_lib.dir/src/topic04_perception02_laser/laserscan/utility_lib.cpp.s
+	cd /home/daniel/catkin_ws/build/ros_essentials_cpp && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniel/catkin_ws/src/ros_essentials_cpp/src/topic04_perception02_laser/laserscan/utility_lib.cpp -o CMakeFiles/utility_lib.dir/src/topic04_perception02_laser/laserscan/utility_lib.cpp.s
 
 ros_essentials_cpp/CMakeFiles/utility_lib.dir/src/topic04_perception02_laser/laserscan/utility_lib.cpp.o.requires:
 
@@ -88,14 +88,14 @@ utility_lib_OBJECTS = \
 # External object files for target utility_lib
 utility_lib_EXTERNAL_OBJECTS =
 
-/home/robotica/catkin_ws/devel/lib/libutility_lib.so: ros_essentials_cpp/CMakeFiles/utility_lib.dir/src/topic04_perception02_laser/laserscan/utility_lib.cpp.o
-/home/robotica/catkin_ws/devel/lib/libutility_lib.so: ros_essentials_cpp/CMakeFiles/utility_lib.dir/build.make
-/home/robotica/catkin_ws/devel/lib/libutility_lib.so: ros_essentials_cpp/CMakeFiles/utility_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/robotica/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library /home/robotica/catkin_ws/devel/lib/libutility_lib.so"
-	cd /home/robotica/catkin_ws/build/ros_essentials_cpp && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/utility_lib.dir/link.txt --verbose=$(VERBOSE)
+/home/daniel/catkin_ws/devel/lib/libutility_lib.so: ros_essentials_cpp/CMakeFiles/utility_lib.dir/src/topic04_perception02_laser/laserscan/utility_lib.cpp.o
+/home/daniel/catkin_ws/devel/lib/libutility_lib.so: ros_essentials_cpp/CMakeFiles/utility_lib.dir/build.make
+/home/daniel/catkin_ws/devel/lib/libutility_lib.so: ros_essentials_cpp/CMakeFiles/utility_lib.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/daniel/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library /home/daniel/catkin_ws/devel/lib/libutility_lib.so"
+	cd /home/daniel/catkin_ws/build/ros_essentials_cpp && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/utility_lib.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-ros_essentials_cpp/CMakeFiles/utility_lib.dir/build: /home/robotica/catkin_ws/devel/lib/libutility_lib.so
+ros_essentials_cpp/CMakeFiles/utility_lib.dir/build: /home/daniel/catkin_ws/devel/lib/libutility_lib.so
 
 .PHONY : ros_essentials_cpp/CMakeFiles/utility_lib.dir/build
 
@@ -104,10 +104,10 @@ ros_essentials_cpp/CMakeFiles/utility_lib.dir/requires: ros_essentials_cpp/CMake
 .PHONY : ros_essentials_cpp/CMakeFiles/utility_lib.dir/requires
 
 ros_essentials_cpp/CMakeFiles/utility_lib.dir/clean:
-	cd /home/robotica/catkin_ws/build/ros_essentials_cpp && $(CMAKE_COMMAND) -P CMakeFiles/utility_lib.dir/cmake_clean.cmake
+	cd /home/daniel/catkin_ws/build/ros_essentials_cpp && $(CMAKE_COMMAND) -P CMakeFiles/utility_lib.dir/cmake_clean.cmake
 .PHONY : ros_essentials_cpp/CMakeFiles/utility_lib.dir/clean
 
 ros_essentials_cpp/CMakeFiles/utility_lib.dir/depend:
-	cd /home/robotica/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/robotica/catkin_ws/src /home/robotica/catkin_ws/src/ros_essentials_cpp /home/robotica/catkin_ws/build /home/robotica/catkin_ws/build/ros_essentials_cpp /home/robotica/catkin_ws/build/ros_essentials_cpp/CMakeFiles/utility_lib.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/daniel/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/daniel/catkin_ws/src /home/daniel/catkin_ws/src/ros_essentials_cpp /home/daniel/catkin_ws/build /home/daniel/catkin_ws/build/ros_essentials_cpp /home/daniel/catkin_ws/build/ros_essentials_cpp/CMakeFiles/utility_lib.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ros_essentials_cpp/CMakeFiles/utility_lib.dir/depend
 
