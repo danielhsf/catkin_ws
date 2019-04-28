@@ -126,6 +126,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/daniel/catkin_ws/build/mestrado/cmake_install.cmake")
   include("/home/daniel/catkin_ws/build/my_octomap_tutorial/cmake_install.cmake")
   include("/home/daniel/catkin_ws/build/my_pcl_tutorial/cmake_install.cmake")
+  include("/home/daniel/catkin_ws/build/testebesta/cmake_install.cmake")
   include("/home/daniel/catkin_ws/build/turtlesim_cleaner_cpp/cmake_install.cmake")
   include("/home/daniel/catkin_ws/build/my_grid_map_tutorial/cmake_install.cmake")
 

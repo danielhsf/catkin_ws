@@ -8,4 +8,3 @@
 
 # modified environment variables
 export PWD="/home/daniel/catkin_ws/build"
-export ROS_PACKAGE_PATH="/home/robotica/catkin_ws/src:/home/daniel/catkin_ws/src:/opt/ros/kinetic/share"

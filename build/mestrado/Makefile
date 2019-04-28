@@ -100,6 +100,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -121,17 +132,6 @@ install/strip: preinstall
 install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -180,6 +180,63 @@ mestrado/fast:
 	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/mestrado.dir/build.make mestrado/CMakeFiles/mestrado.dir/build
 .PHONY : mestrado/fast
 
+# Convenience name for target.
+mestrado/CMakeFiles/testing_messagefilters.dir/rule:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mestrado/CMakeFiles/testing_messagefilters.dir/rule
+.PHONY : mestrado/CMakeFiles/testing_messagefilters.dir/rule
+
+# Convenience name for target.
+testing_messagefilters: mestrado/CMakeFiles/testing_messagefilters.dir/rule
+
+.PHONY : testing_messagefilters
+
+# fast build rule for target.
+testing_messagefilters/fast:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/testing_messagefilters.dir/build.make mestrado/CMakeFiles/testing_messagefilters.dir/build
+.PHONY : testing_messagefilters/fast
+
+# Convenience name for target.
+mestrado/CMakeFiles/kinectxyz.dir/rule:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mestrado/CMakeFiles/kinectxyz.dir/rule
+.PHONY : mestrado/CMakeFiles/kinectxyz.dir/rule
+
+# Convenience name for target.
+kinectxyz: mestrado/CMakeFiles/kinectxyz.dir/rule
+
+.PHONY : kinectxyz
+
+# fast build rule for target.
+kinectxyz/fast:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/kinectxyz.dir/build.make mestrado/CMakeFiles/kinectxyz.dir/build
+.PHONY : kinectxyz/fast
+
+src/kinectxyz.o: src/kinectxyz.cpp.o
+
+.PHONY : src/kinectxyz.o
+
+# target to build an object file
+src/kinectxyz.cpp.o:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/kinectxyz.dir/build.make mestrado/CMakeFiles/kinectxyz.dir/src/kinectxyz.cpp.o
+.PHONY : src/kinectxyz.cpp.o
+
+src/kinectxyz.i: src/kinectxyz.cpp.i
+
+.PHONY : src/kinectxyz.i
+
+# target to preprocess a source file
+src/kinectxyz.cpp.i:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/kinectxyz.dir/build.make mestrado/CMakeFiles/kinectxyz.dir/src/kinectxyz.cpp.i
+.PHONY : src/kinectxyz.cpp.i
+
+src/kinectxyz.s: src/kinectxyz.cpp.s
+
+.PHONY : src/kinectxyz.s
+
+# target to generate assembly for a file
+src/kinectxyz.cpp.s:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/kinectxyz.dir/build.make mestrado/CMakeFiles/kinectxyz.dir/src/kinectxyz.cpp.s
+.PHONY : src/kinectxyz.cpp.s
+
 src/mestrado.o: src/mestrado.cpp.o
 
 .PHONY : src/mestrado.o
@@ -207,6 +264,33 @@ src/mestrado.cpp.s:
 	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/mestrado.dir/build.make mestrado/CMakeFiles/mestrado.dir/src/mestrado.cpp.s
 .PHONY : src/mestrado.cpp.s
 
+src/testing_messagefilters.o: src/testing_messagefilters.cpp.o
+
+.PHONY : src/testing_messagefilters.o
+
+# target to build an object file
+src/testing_messagefilters.cpp.o:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/testing_messagefilters.dir/build.make mestrado/CMakeFiles/testing_messagefilters.dir/src/testing_messagefilters.cpp.o
+.PHONY : src/testing_messagefilters.cpp.o
+
+src/testing_messagefilters.i: src/testing_messagefilters.cpp.i
+
+.PHONY : src/testing_messagefilters.i
+
+# target to preprocess a source file
+src/testing_messagefilters.cpp.i:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/testing_messagefilters.dir/build.make mestrado/CMakeFiles/testing_messagefilters.dir/src/testing_messagefilters.cpp.i
+.PHONY : src/testing_messagefilters.cpp.i
+
+src/testing_messagefilters.s: src/testing_messagefilters.cpp.s
+
+.PHONY : src/testing_messagefilters.s
+
+# target to generate assembly for a file
+src/testing_messagefilters.cpp.s:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/testing_messagefilters.dir/build.make mestrado/CMakeFiles/testing_messagefilters.dir/src/testing_messagefilters.cpp.s
+.PHONY : src/testing_messagefilters.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -217,13 +301,21 @@ help:
 	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... mestrado"
-	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... test"
+	@echo "... mestrado"
+	@echo "... testing_messagefilters"
+	@echo "... install/local"
+	@echo "... kinectxyz"
+	@echo "... install/strip"
+	@echo "... src/kinectxyz.o"
+	@echo "... src/kinectxyz.i"
+	@echo "... src/kinectxyz.s"
 	@echo "... src/mestrado.o"
 	@echo "... src/mestrado.i"
 	@echo "... src/mestrado.s"
+	@echo "... src/testing_messagefilters.o"
+	@echo "... src/testing_messagefilters.i"
+	@echo "... src/testing_messagefilters.s"
 .PHONY : help
 
 

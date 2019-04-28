@@ -2233,6 +2233,32 @@ mestrado/fast:
 .PHONY : mestrado/fast
 
 #=============================================================================
+# Target rules for targets named testing_messagefilters
+
+# Build rule for target.
+testing_messagefilters: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testing_messagefilters
+.PHONY : testing_messagefilters
+
+# fast build rule for target.
+testing_messagefilters/fast:
+	$(MAKE) -f mestrado/CMakeFiles/testing_messagefilters.dir/build.make mestrado/CMakeFiles/testing_messagefilters.dir/build
+.PHONY : testing_messagefilters/fast
+
+#=============================================================================
+# Target rules for targets named kinectxyz
+
+# Build rule for target.
+kinectxyz: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kinectxyz
+.PHONY : kinectxyz
+
+# fast build rule for target.
+kinectxyz/fast:
+	$(MAKE) -f mestrado/CMakeFiles/kinectxyz.dir/build.make mestrado/CMakeFiles/kinectxyz.dir/build
+.PHONY : kinectxyz/fast
+
+#=============================================================================
 # Target rules for targets named octomap_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -2322,6 +2348,19 @@ pcl_subscribe_cpp: cmake_check_build_system
 pcl_subscribe_cpp/fast:
 	$(MAKE) -f my_pcl_tutorial/CMakeFiles/pcl_subscribe_cpp.dir/build.make my_pcl_tutorial/CMakeFiles/pcl_subscribe_cpp.dir/build
 .PHONY : pcl_subscribe_cpp/fast
+
+#=============================================================================
+# Target rules for targets named _catkin_empty_exported_target
+
+# Build rule for target.
+_catkin_empty_exported_target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _catkin_empty_exported_target
+.PHONY : _catkin_empty_exported_target
+
+# fast build rule for target.
+_catkin_empty_exported_target/fast:
+	$(MAKE) -f testebesta/CMakeFiles/_catkin_empty_exported_target.dir/build.make testebesta/CMakeFiles/_catkin_empty_exported_target.dir/build
+.PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
 # Target rules for targets named map_msgs_generate_messages_lisp
@@ -2586,6 +2625,8 @@ help:
 	@echo "... visualization_msgs_generate_messages_nodejs"
 	@echo "... visualization_msgs_generate_messages_py"
 	@echo "... mestrado"
+	@echo "... testing_messagefilters"
+	@echo "... kinectxyz"
 	@echo "... octomap_msgs_generate_messages_eus"
 	@echo "... octomap_msgs_generate_messages_cpp"
 	@echo "... octomap_msgs_generate_messages_nodejs"
@@ -2593,6 +2634,7 @@ help:
 	@echo "... octomap_msgs_generate_messages_py"
 	@echo "... readimud_cpp"
 	@echo "... pcl_subscribe_cpp"
+	@echo "... _catkin_empty_exported_target"
 	@echo "... map_msgs_generate_messages_lisp"
 	@echo "... map_msgs_generate_messages_eus"
 	@echo "... map_msgs_generate_messages_nodejs"

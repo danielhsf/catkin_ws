@@ -14,6 +14,8 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   sensor_msgs
+  tf
+  message_filters
 )
 
 ## System dependencies are found with CMake's conventions
@@ -203,3 +205,9 @@ include_directories(
 
 add_executable(mestrado src/mestrado.cpp)
 target_link_libraries(mestrado ${catkin_LIBRARIES})
+
+add_executable(kinectxyz src/kinectxyz.cpp)
+target_link_libraries(kinectxyz ${catkin_LIBRARIES})
+
+add_executable(testing_messagefilters src/testing_messagefilters.cpp)
+target_link_libraries(testing_messagefilters ${catkin_LIBRARIES})
