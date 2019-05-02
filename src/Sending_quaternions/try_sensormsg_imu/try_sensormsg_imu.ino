@@ -28,14 +28,14 @@ void loop(void)
 { 
   sensorimu.header.seq = x;
   x = x+1;
-  sensorimu.header.stamp = nh.now();
-  sensorimu.header.frame_id = "imu";
   imu::Quaternion quat = bno.getQuat();
   sensorimu.orientation.w = quat.w();
   sensorimu.orientation.x = quat.x();
   sensorimu.orientation.y = quat.y();
   sensorimu.orientation.z = quat.z();
+  sensorimu.header.stamp = nh.now();
+  sensorimu.header.frame_id = "camera_link";
   chatter.publish(&sensorimu);
   nh.spinOnce();
-  delay(10);
+  delay(1);
 }

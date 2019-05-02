@@ -56,7 +56,7 @@ public:
         transform_1 = Eigen::Matrix4f::Identity();
         transform_1(2,3) = 0.8;
         transform_2 = Eigen::Matrix4f::Identity();
-        //transform_2(1,1) = -1;
+        transform_2(1,1) = -1;
     }
 
     void orientationcallback(std_msgs::Float32MultiArray sensorimu){
@@ -97,17 +97,8 @@ public:
         pcl::removeNaNFromPointCloud(cloud,cloud_filtered,indices);
         printf("Original Point Cloud Size = %d\n",cloud.width * cloud.height); 
         printf("After filtering nans = %d\n",cloud_filtered.width * cloud_filtered.height);
-        //PassThrough Filter
-        //printf("After Pass Through Filter = %d\n",cloud_filtered.width * cloud_filtered.height);
-        //x
         pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloudPTR(new pcl::PointCloud<pcl::PointXYZRGBA>);
-        pcl::PassThrough<pcl::PointXYZRGBA> pass;
-        cloudPTR = cloud_filtered.makeShared();
-        pass.setInputCloud(cloudPTR);
-        pass.setFilterFieldName("x");
-        pass.setFilterLimits(-0.3,0.3);
-        pass.filter(cloud_filtered);
-        printf("After Pass Through Filter = %d\n",cloud_filtered.width * cloud_filtered.height);
+        
         //Voxel Grid
         //pcl::VoxelGrid<pcl::PointXYZRGBA> sor;
         //cloudPTR = cloud_filtered.makeShared();
@@ -133,13 +124,22 @@ public:
         //pcl::io::savePCDFileASCII("Transformado.pcd", cloud_filtered);
         pcl::transformPointCloud(cloud_filtered,cloud_filtered,transform_1);
         pcl::transformPointCloud(cloud_filtered,cloud_filtered,transform_2);
-        
+        //PassThrough Filter
+        //printf("After Pass Through Filter = %d\n",cloud_filtered.width * cloud_filtered.height);
+        //x
+        pcl::PassThrough<pcl::PointXYZRGBA> pass;
+        cloudPTR = cloud_filtered.makeShared();
+        pass.setInputCloud(cloudPTR);
+        pass.setFilterFieldName("x");
+        pass.setFilterLimits(-0.3,0.3);
+        pass.filter(cloud_filtered);
+        //y
         cloudPTR = cloud_filtered.makeShared();
         pass.setInputCloud(cloudPTR);
         pass.setFilterFieldName("y");
-        pass.setFilterLimits(-1.5,0);
+        pass.setFilterLimits(0,1.5);
         pass.filter(cloud_filtered);
-        
+        printf("After Pass Through Filter = %d\n",cloud_filtered.width * cloud_filtered.height);
         //output
         pcl::toROSMsg(cloud_filtered, output);
     	output.header.frame_id = "point_cloud";

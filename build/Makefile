@@ -2220,32 +2220,6 @@ visualization_msgs_generate_messages_py/fast:
 .PHONY : visualization_msgs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named receive_pointcloud
-
-# Build rule for target.
-receive_pointcloud: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 receive_pointcloud
-.PHONY : receive_pointcloud
-
-# fast build rule for target.
-receive_pointcloud/fast:
-	$(MAKE) -f mestrado/CMakeFiles/receive_pointcloud.dir/build.make mestrado/CMakeFiles/receive_pointcloud.dir/build
-.PHONY : receive_pointcloud/fast
-
-#=============================================================================
-# Target rules for targets named mestrado
-
-# Build rule for target.
-mestrado: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 mestrado
-.PHONY : mestrado
-
-# fast build rule for target.
-mestrado/fast:
-	$(MAKE) -f mestrado/CMakeFiles/mestrado.dir/build.make mestrado/CMakeFiles/mestrado.dir/build
-.PHONY : mestrado/fast
-
-#=============================================================================
 # Target rules for targets named testing_messagefilters
 
 # Build rule for target.
@@ -2259,6 +2233,19 @@ testing_messagefilters/fast:
 .PHONY : testing_messagefilters/fast
 
 #=============================================================================
+# Target rules for targets named detect_planes
+
+# Build rule for target.
+detect_planes: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 detect_planes
+.PHONY : detect_planes
+
+# fast build rule for target.
+detect_planes/fast:
+	$(MAKE) -f mestrado/CMakeFiles/detect_planes.dir/build.make mestrado/CMakeFiles/detect_planes.dir/build
+.PHONY : detect_planes/fast
+
+#=============================================================================
 # Target rules for targets named kinectxyz
 
 # Build rule for target.
@@ -2270,6 +2257,32 @@ kinectxyz: cmake_check_build_system
 kinectxyz/fast:
 	$(MAKE) -f mestrado/CMakeFiles/kinectxyz.dir/build.make mestrado/CMakeFiles/kinectxyz.dir/build
 .PHONY : kinectxyz/fast
+
+#=============================================================================
+# Target rules for targets named filters
+
+# Build rule for target.
+filters: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 filters
+.PHONY : filters
+
+# fast build rule for target.
+filters/fast:
+	$(MAKE) -f mestrado/CMakeFiles/filters.dir/build.make mestrado/CMakeFiles/filters.dir/build
+.PHONY : filters/fast
+
+#=============================================================================
+# Target rules for targets named receive_pointcloud
+
+# Build rule for target.
+receive_pointcloud: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 receive_pointcloud
+.PHONY : receive_pointcloud
+
+# fast build rule for target.
+receive_pointcloud/fast:
+	$(MAKE) -f mestrado/CMakeFiles/receive_pointcloud.dir/build.make mestrado/CMakeFiles/receive_pointcloud.dir/build
+.PHONY : receive_pointcloud/fast
 
 #=============================================================================
 # Target rules for targets named receive_tf
@@ -2650,10 +2663,11 @@ help:
 	@echo "... visualization_msgs_generate_messages_eus"
 	@echo "... visualization_msgs_generate_messages_nodejs"
 	@echo "... visualization_msgs_generate_messages_py"
-	@echo "... receive_pointcloud"
-	@echo "... mestrado"
 	@echo "... testing_messagefilters"
+	@echo "... detect_planes"
 	@echo "... kinectxyz"
+	@echo "... filters"
+	@echo "... receive_pointcloud"
 	@echo "... receive_tf"
 	@echo "... octomap_msgs_generate_messages_eus"
 	@echo "... octomap_msgs_generate_messages_cpp"

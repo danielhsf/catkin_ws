@@ -16,10 +16,7 @@ using namespace tf;
 
 void callback(const ImuConstPtr& sensorimu, const PointCloud2ConstPtr& nuvemdepontos)
 {
-  float sinr_cosp = +2.0 * (sensorimu->orientation.w * sensorimu->orientation.x + sensorimu->orientation.y * sensorimu->orientation.z);
-  float cosr_cosp = +1.0 - 2.0 * (sensorimu->orientation.x * sensorimu->orientation.x + sensorimu->orientation.y * sensorimu->orientation.y);
-  float roll = atan2f(sinr_cosp, cosr_cosp);
-  printf("Roll = %f \n", roll*180/M_PI);
+  printf("teste");
 }
 
 int main(int argc, char** argv)
@@ -30,7 +27,7 @@ int main(int argc, char** argv)
 
   message_filters::Subscriber<PointCloud2> image_sub(nh, "/camera/depth_registered/points", 1);
   message_filters::Subscriber<Imu> info_sub(nh, "/sensorimu", 1);
-  TimeSynchronizer<Imu,PointCloud2> sync(info_sub,image_sub , 10);
+  TimeSynchronizer<Imu,PointCloud2> sync(info_sub,image_sub , 1);
   sync.registerCallback(boost::bind(&callback, _1, _2));
 
   ros::spin();

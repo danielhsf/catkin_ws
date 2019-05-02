@@ -68,6 +68,17 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -122,17 +133,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # The main all target
 all: cmake_check_build_system
 	cd /home/daniel/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/daniel/catkin_ws/build/CMakeFiles /home/daniel/catkin_ws/build/mestrado/CMakeFiles/progress.marks
@@ -166,36 +166,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-mestrado/CMakeFiles/receive_pointcloud.dir/rule:
-	cd /home/daniel/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mestrado/CMakeFiles/receive_pointcloud.dir/rule
-.PHONY : mestrado/CMakeFiles/receive_pointcloud.dir/rule
-
-# Convenience name for target.
-receive_pointcloud: mestrado/CMakeFiles/receive_pointcloud.dir/rule
-
-.PHONY : receive_pointcloud
-
-# fast build rule for target.
-receive_pointcloud/fast:
-	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/receive_pointcloud.dir/build.make mestrado/CMakeFiles/receive_pointcloud.dir/build
-.PHONY : receive_pointcloud/fast
-
-# Convenience name for target.
-mestrado/CMakeFiles/mestrado.dir/rule:
-	cd /home/daniel/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mestrado/CMakeFiles/mestrado.dir/rule
-.PHONY : mestrado/CMakeFiles/mestrado.dir/rule
-
-# Convenience name for target.
-mestrado: mestrado/CMakeFiles/mestrado.dir/rule
-
-.PHONY : mestrado
-
-# fast build rule for target.
-mestrado/fast:
-	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/mestrado.dir/build.make mestrado/CMakeFiles/mestrado.dir/build
-.PHONY : mestrado/fast
-
-# Convenience name for target.
 mestrado/CMakeFiles/testing_messagefilters.dir/rule:
 	cd /home/daniel/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mestrado/CMakeFiles/testing_messagefilters.dir/rule
 .PHONY : mestrado/CMakeFiles/testing_messagefilters.dir/rule
@@ -209,6 +179,21 @@ testing_messagefilters: mestrado/CMakeFiles/testing_messagefilters.dir/rule
 testing_messagefilters/fast:
 	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/testing_messagefilters.dir/build.make mestrado/CMakeFiles/testing_messagefilters.dir/build
 .PHONY : testing_messagefilters/fast
+
+# Convenience name for target.
+mestrado/CMakeFiles/detect_planes.dir/rule:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mestrado/CMakeFiles/detect_planes.dir/rule
+.PHONY : mestrado/CMakeFiles/detect_planes.dir/rule
+
+# Convenience name for target.
+detect_planes: mestrado/CMakeFiles/detect_planes.dir/rule
+
+.PHONY : detect_planes
+
+# fast build rule for target.
+detect_planes/fast:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/detect_planes.dir/build.make mestrado/CMakeFiles/detect_planes.dir/build
+.PHONY : detect_planes/fast
 
 # Convenience name for target.
 mestrado/CMakeFiles/kinectxyz.dir/rule:
@@ -226,6 +211,36 @@ kinectxyz/fast:
 .PHONY : kinectxyz/fast
 
 # Convenience name for target.
+mestrado/CMakeFiles/filters.dir/rule:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mestrado/CMakeFiles/filters.dir/rule
+.PHONY : mestrado/CMakeFiles/filters.dir/rule
+
+# Convenience name for target.
+filters: mestrado/CMakeFiles/filters.dir/rule
+
+.PHONY : filters
+
+# fast build rule for target.
+filters/fast:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/filters.dir/build.make mestrado/CMakeFiles/filters.dir/build
+.PHONY : filters/fast
+
+# Convenience name for target.
+mestrado/CMakeFiles/receive_pointcloud.dir/rule:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mestrado/CMakeFiles/receive_pointcloud.dir/rule
+.PHONY : mestrado/CMakeFiles/receive_pointcloud.dir/rule
+
+# Convenience name for target.
+receive_pointcloud: mestrado/CMakeFiles/receive_pointcloud.dir/rule
+
+.PHONY : receive_pointcloud
+
+# fast build rule for target.
+receive_pointcloud/fast:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/receive_pointcloud.dir/build.make mestrado/CMakeFiles/receive_pointcloud.dir/build
+.PHONY : receive_pointcloud/fast
+
+# Convenience name for target.
 mestrado/CMakeFiles/receive_tf.dir/rule:
 	cd /home/daniel/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mestrado/CMakeFiles/receive_tf.dir/rule
 .PHONY : mestrado/CMakeFiles/receive_tf.dir/rule
@@ -239,6 +254,60 @@ receive_tf: mestrado/CMakeFiles/receive_tf.dir/rule
 receive_tf/fast:
 	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/receive_tf.dir/build.make mestrado/CMakeFiles/receive_tf.dir/build
 .PHONY : receive_tf/fast
+
+src/detect_planes.o: src/detect_planes.cpp.o
+
+.PHONY : src/detect_planes.o
+
+# target to build an object file
+src/detect_planes.cpp.o:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/detect_planes.dir/build.make mestrado/CMakeFiles/detect_planes.dir/src/detect_planes.cpp.o
+.PHONY : src/detect_planes.cpp.o
+
+src/detect_planes.i: src/detect_planes.cpp.i
+
+.PHONY : src/detect_planes.i
+
+# target to preprocess a source file
+src/detect_planes.cpp.i:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/detect_planes.dir/build.make mestrado/CMakeFiles/detect_planes.dir/src/detect_planes.cpp.i
+.PHONY : src/detect_planes.cpp.i
+
+src/detect_planes.s: src/detect_planes.cpp.s
+
+.PHONY : src/detect_planes.s
+
+# target to generate assembly for a file
+src/detect_planes.cpp.s:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/detect_planes.dir/build.make mestrado/CMakeFiles/detect_planes.dir/src/detect_planes.cpp.s
+.PHONY : src/detect_planes.cpp.s
+
+src/filters.o: src/filters.cpp.o
+
+.PHONY : src/filters.o
+
+# target to build an object file
+src/filters.cpp.o:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/filters.dir/build.make mestrado/CMakeFiles/filters.dir/src/filters.cpp.o
+.PHONY : src/filters.cpp.o
+
+src/filters.i: src/filters.cpp.i
+
+.PHONY : src/filters.i
+
+# target to preprocess a source file
+src/filters.cpp.i:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/filters.dir/build.make mestrado/CMakeFiles/filters.dir/src/filters.cpp.i
+.PHONY : src/filters.cpp.i
+
+src/filters.s: src/filters.cpp.s
+
+.PHONY : src/filters.s
+
+# target to generate assembly for a file
+src/filters.cpp.s:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/filters.dir/build.make mestrado/CMakeFiles/filters.dir/src/filters.cpp.s
+.PHONY : src/filters.cpp.s
 
 src/kinectxyz.o: src/kinectxyz.cpp.o
 
@@ -266,33 +335,6 @@ src/kinectxyz.s: src/kinectxyz.cpp.s
 src/kinectxyz.cpp.s:
 	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/kinectxyz.dir/build.make mestrado/CMakeFiles/kinectxyz.dir/src/kinectxyz.cpp.s
 .PHONY : src/kinectxyz.cpp.s
-
-src/mestrado.o: src/mestrado.cpp.o
-
-.PHONY : src/mestrado.o
-
-# target to build an object file
-src/mestrado.cpp.o:
-	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/mestrado.dir/build.make mestrado/CMakeFiles/mestrado.dir/src/mestrado.cpp.o
-.PHONY : src/mestrado.cpp.o
-
-src/mestrado.i: src/mestrado.cpp.i
-
-.PHONY : src/mestrado.i
-
-# target to preprocess a source file
-src/mestrado.cpp.i:
-	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/mestrado.dir/build.make mestrado/CMakeFiles/mestrado.dir/src/mestrado.cpp.i
-.PHONY : src/mestrado.cpp.i
-
-src/mestrado.s: src/mestrado.cpp.s
-
-.PHONY : src/mestrado.s
-
-# target to generate assembly for a file
-src/mestrado.cpp.s:
-	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/mestrado.dir/build.make mestrado/CMakeFiles/mestrado.dir/src/mestrado.cpp.s
-.PHONY : src/mestrado.cpp.s
 
 src/receive_pointcloud.o: src/receive_pointcloud.cpp.o
 
@@ -382,23 +424,27 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install"
-	@echo "... receive_pointcloud"
-	@echo "... mestrado"
+	@echo "... rebuild_cache"
 	@echo "... testing_messagefilters"
+	@echo "... detect_planes"
 	@echo "... kinectxyz"
 	@echo "... list_install_components"
 	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... filters"
+	@echo "... receive_pointcloud"
 	@echo "... receive_tf"
 	@echo "... test"
 	@echo "... edit_cache"
-	@echo "... rebuild_cache"
+	@echo "... src/detect_planes.o"
+	@echo "... src/detect_planes.i"
+	@echo "... src/detect_planes.s"
+	@echo "... src/filters.o"
+	@echo "... src/filters.i"
+	@echo "... src/filters.s"
 	@echo "... src/kinectxyz.o"
 	@echo "... src/kinectxyz.i"
 	@echo "... src/kinectxyz.s"
-	@echo "... src/mestrado.o"
-	@echo "... src/mestrado.i"
-	@echo "... src/mestrado.s"
 	@echo "... src/receive_pointcloud.o"
 	@echo "... src/receive_pointcloud.i"
 	@echo "... src/receive_pointcloud.s"

@@ -125,7 +125,6 @@ public:
         pass.setFilterFieldName("x");
         pass.setFilterLimits(-0.3,0.3);
         pass.filter(cloud_filtered);
-        printf("After Pass Through Filter = %d\n",cloud_filtered.width * cloud_filtered.height);
         //y
         cloudPTR = cloud_filtered.makeShared();
         pass.setInputCloud(cloudPTR);
@@ -133,6 +132,7 @@ public:
         pass.setFilterLimits(0,1.5);
         pass.filter(cloud_filtered);
         //output
+        printf("After Pass Through Filter = %d\n",cloud_filtered.width * cloud_filtered.height);
         pcl::toROSMsg(cloud_filtered, output);
     	output.header.frame_id = "point_cloud";
         //pcl::io::savePCDFileASCII("filtrado.pcd", cloud_filtered);
@@ -155,8 +155,8 @@ protected:
 
 main(int argc, char** argv)
 {
-    ros::init(argc, argv, "pcl_filter");
-    ROS_INFO("Started Filter Node");
+    ros::init(argc, argv, "pcl_filtros");
+    ROS_INFO("Iniciando o topico de filtragem");
     cloudHandler handler;
     ros::spin();
     return 0;

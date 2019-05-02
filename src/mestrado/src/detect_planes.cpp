@@ -23,7 +23,7 @@
 class cloudHandler{
 public:
     cloudHandler(){
-        pcl_sub = nh.subscribe("pcl_filtros", 1, &cloudHandler::callback, this);
+        pcl_sub = nh.subscribe("/pcl_filtros", 1, &cloudHandler::callback, this);
     }
 
     void callback(const sensor_msgs::PointCloud2& input){
@@ -95,8 +95,8 @@ protected:
 
 main(int argc, char** argv)
 {
-    ros::init(argc, argv, "pcl_filter");
-    ROS_INFO("Started Filter Node");
+    ros::init(argc, argv, "pcl_planes_detection");
+    ROS_INFO("Iniciando detecção de planos");
     cloudHandler handler;
     ros::spin();
     return 0;
