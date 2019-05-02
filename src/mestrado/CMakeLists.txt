@@ -203,11 +203,20 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-add_executable(mestrado src/mestrado.cpp)
-target_link_libraries(mestrado ${catkin_LIBRARIES})
+add_executable(filters src/filters.cpp)
+target_link_libraries(filters ${catkin_LIBRARIES})
+
+add_executable(detect_planes src/detect_planes.cpp)
+target_link_libraries(detect_planes ${catkin_LIBRARIES})
 
 add_executable(kinectxyz src/kinectxyz.cpp)
 target_link_libraries(kinectxyz ${catkin_LIBRARIES})
 
 add_executable(testing_messagefilters src/testing_messagefilters.cpp)
 target_link_libraries(testing_messagefilters ${catkin_LIBRARIES})
+
+add_executable(receive_pointcloud src/receive_pointcloud.cpp)
+target_link_libraries(receive_pointcloud ${catkin_LIBRARIES})
+
+add_executable(receive_tf src/receive_tf.cpp)
+target_link_libraries(receive_tf ${catkin_LIBRARIES})

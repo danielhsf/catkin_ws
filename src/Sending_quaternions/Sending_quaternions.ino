@@ -35,5 +35,5 @@ void loop(void)
   sensorimu.data = values;
   chatter.publish(&sensorimu);
   nh.spinOnce();
-  delay(1000);
+  delay(10);
 }

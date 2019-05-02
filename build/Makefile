@@ -2220,6 +2220,19 @@ visualization_msgs_generate_messages_py/fast:
 .PHONY : visualization_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named receive_pointcloud
+
+# Build rule for target.
+receive_pointcloud: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 receive_pointcloud
+.PHONY : receive_pointcloud
+
+# fast build rule for target.
+receive_pointcloud/fast:
+	$(MAKE) -f mestrado/CMakeFiles/receive_pointcloud.dir/build.make mestrado/CMakeFiles/receive_pointcloud.dir/build
+.PHONY : receive_pointcloud/fast
+
+#=============================================================================
 # Target rules for targets named mestrado
 
 # Build rule for target.
@@ -2257,6 +2270,19 @@ kinectxyz: cmake_check_build_system
 kinectxyz/fast:
 	$(MAKE) -f mestrado/CMakeFiles/kinectxyz.dir/build.make mestrado/CMakeFiles/kinectxyz.dir/build
 .PHONY : kinectxyz/fast
+
+#=============================================================================
+# Target rules for targets named receive_tf
+
+# Build rule for target.
+receive_tf: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 receive_tf
+.PHONY : receive_tf
+
+# fast build rule for target.
+receive_tf/fast:
+	$(MAKE) -f mestrado/CMakeFiles/receive_tf.dir/build.make mestrado/CMakeFiles/receive_tf.dir/build
+.PHONY : receive_tf/fast
 
 #=============================================================================
 # Target rules for targets named octomap_msgs_generate_messages_eus
@@ -2624,9 +2650,11 @@ help:
 	@echo "... visualization_msgs_generate_messages_eus"
 	@echo "... visualization_msgs_generate_messages_nodejs"
 	@echo "... visualization_msgs_generate_messages_py"
+	@echo "... receive_pointcloud"
 	@echo "... mestrado"
 	@echo "... testing_messagefilters"
 	@echo "... kinectxyz"
+	@echo "... receive_tf"
 	@echo "... octomap_msgs_generate_messages_eus"
 	@echo "... octomap_msgs_generate_messages_cpp"
 	@echo "... octomap_msgs_generate_messages_nodejs"
