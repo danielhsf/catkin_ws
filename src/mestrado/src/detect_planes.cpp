@@ -78,8 +78,10 @@ public:
         cloudPTR.swap (cloud_f);
         i++;
         }
-        
-        printf("Detected Planes = %d\n ", i );
+        printf("Planos detectados = %d \n",i);
+
+
+
         //output
         //pcl::toROSMsg(cloud_filtered, output);
     	//output.header.frame_id = "point_cloud";

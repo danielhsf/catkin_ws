@@ -24,7 +24,7 @@ public:
     cloudHandler()
     {
         //pcl_sub = nh.subscribe("/pcl_filtered", 10, &cloudHandler::cloudCB, this);
-        pcl_sub = nh.subscribe("/pcl_filtered", 10, &cloudHandler::cloudCB, this);
+        pcl_sub = nh.subscribe("/pcl_filtros", 10, &cloudHandler::cloudCB, this);
         pcl_pub = nh.advertise<grid_map_msgs::GridMap>("grid_map", 1, true);
     }
 

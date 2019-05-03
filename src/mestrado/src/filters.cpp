@@ -15,6 +15,9 @@
 // Header for removing NaNs
 #include <pcl/filters/filter.h>
 
+//Header for removing outliers
+#include <pcl/filters/statistical_outlier_removal.h>
+
 // Header for Pass Through filter
 #include <pcl/filters/passthrough.h>
 
@@ -92,11 +95,19 @@ public:
         printf("Original Point Cloud Size = %d\n",cloud.width * cloud.height); 
         printf("After filtering nans = %d\n",cloud_filtered.width * cloud_filtered.height);
         pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloudPTR(new pcl::PointCloud<pcl::PointXYZRGBA>);
+        // removing Outliers
+        //cloudPTR = cloud_filtered.makeShared();
+        //pcl::StatisticalOutlierRemoval<pcl::PointXYZRGBA> soro;
+        //soro.setInputCloud (cloudPTR);
+        //soro.setMeanK (50);
+        //soro.setStddevMulThresh (1.0);
+        //soro.filter (cloud_filtered);
+        printf("After Removing outliers = %d\n",cloud_filtered.width * cloud_filtered.height);
         //Voxel Grid
         pcl::VoxelGrid<pcl::PointXYZRGBA> sor;
         cloudPTR = cloud_filtered.makeShared();
         sor.setInputCloud(cloudPTR);
-        sor.setLeafSize(0.01f, 0.01f, 0.01f);
+        sor.setLeafSize(0.02f, 0.02f, 0.02f);
         sor.filter(cloud_filtered);
         printf("After Voxel Grid Filter = %d\n",cloud_filtered.width * cloud_filtered.height);
         //Transform View
@@ -135,7 +146,7 @@ public:
         printf("After Pass Through Filter = %d\n",cloud_filtered.width * cloud_filtered.height);
         pcl::toROSMsg(cloud_filtered, output);
     	output.header.frame_id = "point_cloud";
-        //pcl::io::savePCDFileASCII("filtrado.pcd", cloud_filtered);
+        pcl::io::savePCDFileASCII("filtrado.pcd", cloud_filtered);
         pcl_pub.publish(output);
     }
 

@@ -1,5 +1,6 @@
 .vscode/*
 src/mestrado/.vscode/
+src/my_grid_map_tutorial/.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
