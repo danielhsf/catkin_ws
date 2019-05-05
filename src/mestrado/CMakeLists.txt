@@ -206,6 +206,9 @@ include_directories(
 add_executable(filters src/filters.cpp)
 target_link_libraries(filters ${catkin_LIBRARIES})
 
+add_executable(filters_sor src/filters_sor.cpp)
+target_link_libraries(filters_sor ${catkin_LIBRARIES})
+
 add_executable(detect_planes src/detect_planes.cpp)
 target_link_libraries(detect_planes ${catkin_LIBRARIES})
 

@@ -96,13 +96,13 @@ public:
         printf("After filtering nans = %d\n",cloud_filtered.width * cloud_filtered.height);
         pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloudPTR(new pcl::PointCloud<pcl::PointXYZRGBA>);
         // removing Outliers
-        //cloudPTR = cloud_filtered.makeShared();
-        //pcl::StatisticalOutlierRemoval<pcl::PointXYZRGBA> soro;
-        //soro.setInputCloud (cloudPTR);
-        //soro.setMeanK (50);
-        //soro.setStddevMulThresh (1.0);
-        //soro.filter (cloud_filtered);
-        //printf("After Removing outliers = %d\n",cloud_filtered.width * cloud_filtered.height);
+        cloudPTR = cloud_filtered.makeShared();
+        pcl::StatisticalOutlierRemoval<pcl::PointXYZRGBA> soro;
+        soro.setInputCloud (cloudPTR);
+        soro.setMeanK (50);
+        soro.setStddevMulThresh (1.0);
+        soro.filter (cloud_filtered);
+        printf("After Removing outliers = %d\n",cloud_filtered.width * cloud_filtered.height);
         //Voxel Grid
         pcl::VoxelGrid<pcl::PointXYZRGBA> sor;
         cloudPTR = cloud_filtered.makeShared();

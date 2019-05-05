@@ -111,17 +111,6 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -132,6 +121,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,19 +166,34 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-mestrado/CMakeFiles/testing_messagefilters.dir/rule:
-	cd /home/daniel/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mestrado/CMakeFiles/testing_messagefilters.dir/rule
-.PHONY : mestrado/CMakeFiles/testing_messagefilters.dir/rule
+mestrado/CMakeFiles/kinectxyz.dir/rule:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mestrado/CMakeFiles/kinectxyz.dir/rule
+.PHONY : mestrado/CMakeFiles/kinectxyz.dir/rule
 
 # Convenience name for target.
-testing_messagefilters: mestrado/CMakeFiles/testing_messagefilters.dir/rule
+kinectxyz: mestrado/CMakeFiles/kinectxyz.dir/rule
 
-.PHONY : testing_messagefilters
+.PHONY : kinectxyz
 
 # fast build rule for target.
-testing_messagefilters/fast:
-	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/testing_messagefilters.dir/build.make mestrado/CMakeFiles/testing_messagefilters.dir/build
-.PHONY : testing_messagefilters/fast
+kinectxyz/fast:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/kinectxyz.dir/build.make mestrado/CMakeFiles/kinectxyz.dir/build
+.PHONY : kinectxyz/fast
+
+# Convenience name for target.
+mestrado/CMakeFiles/filters_sor.dir/rule:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mestrado/CMakeFiles/filters_sor.dir/rule
+.PHONY : mestrado/CMakeFiles/filters_sor.dir/rule
+
+# Convenience name for target.
+filters_sor: mestrado/CMakeFiles/filters_sor.dir/rule
+
+.PHONY : filters_sor
+
+# fast build rule for target.
+filters_sor/fast:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/filters_sor.dir/build.make mestrado/CMakeFiles/filters_sor.dir/build
+.PHONY : filters_sor/fast
 
 # Convenience name for target.
 mestrado/CMakeFiles/detect_planes.dir/rule:
@@ -196,19 +211,19 @@ detect_planes/fast:
 .PHONY : detect_planes/fast
 
 # Convenience name for target.
-mestrado/CMakeFiles/kinectxyz.dir/rule:
-	cd /home/daniel/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mestrado/CMakeFiles/kinectxyz.dir/rule
-.PHONY : mestrado/CMakeFiles/kinectxyz.dir/rule
+mestrado/CMakeFiles/testing_messagefilters.dir/rule:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 mestrado/CMakeFiles/testing_messagefilters.dir/rule
+.PHONY : mestrado/CMakeFiles/testing_messagefilters.dir/rule
 
 # Convenience name for target.
-kinectxyz: mestrado/CMakeFiles/kinectxyz.dir/rule
+testing_messagefilters: mestrado/CMakeFiles/testing_messagefilters.dir/rule
 
-.PHONY : kinectxyz
+.PHONY : testing_messagefilters
 
 # fast build rule for target.
-kinectxyz/fast:
-	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/kinectxyz.dir/build.make mestrado/CMakeFiles/kinectxyz.dir/build
-.PHONY : kinectxyz/fast
+testing_messagefilters/fast:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/testing_messagefilters.dir/build.make mestrado/CMakeFiles/testing_messagefilters.dir/build
+.PHONY : testing_messagefilters/fast
 
 # Convenience name for target.
 mestrado/CMakeFiles/filters.dir/rule:
@@ -308,6 +323,33 @@ src/filters.s: src/filters.cpp.s
 src/filters.cpp.s:
 	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/filters.dir/build.make mestrado/CMakeFiles/filters.dir/src/filters.cpp.s
 .PHONY : src/filters.cpp.s
+
+src/filters_sor.o: src/filters_sor.cpp.o
+
+.PHONY : src/filters_sor.o
+
+# target to build an object file
+src/filters_sor.cpp.o:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/filters_sor.dir/build.make mestrado/CMakeFiles/filters_sor.dir/src/filters_sor.cpp.o
+.PHONY : src/filters_sor.cpp.o
+
+src/filters_sor.i: src/filters_sor.cpp.i
+
+.PHONY : src/filters_sor.i
+
+# target to preprocess a source file
+src/filters_sor.cpp.i:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/filters_sor.dir/build.make mestrado/CMakeFiles/filters_sor.dir/src/filters_sor.cpp.i
+.PHONY : src/filters_sor.cpp.i
+
+src/filters_sor.s: src/filters_sor.cpp.s
+
+.PHONY : src/filters_sor.s
+
+# target to generate assembly for a file
+src/filters_sor.cpp.s:
+	cd /home/daniel/catkin_ws/build && $(MAKE) -f mestrado/CMakeFiles/filters_sor.dir/build.make mestrado/CMakeFiles/filters_sor.dir/src/filters_sor.cpp.s
+.PHONY : src/filters_sor.cpp.s
 
 src/kinectxyz.o: src/kinectxyz.cpp.o
 
@@ -425,23 +467,27 @@ help:
 	@echo "... depend"
 	@echo "... install"
 	@echo "... rebuild_cache"
-	@echo "... testing_messagefilters"
-	@echo "... detect_planes"
 	@echo "... kinectxyz"
 	@echo "... list_install_components"
 	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... edit_cache"
+	@echo "... filters_sor"
+	@echo "... detect_planes"
+	@echo "... testing_messagefilters"
 	@echo "... filters"
 	@echo "... receive_pointcloud"
 	@echo "... receive_tf"
 	@echo "... test"
-	@echo "... edit_cache"
 	@echo "... src/detect_planes.o"
 	@echo "... src/detect_planes.i"
 	@echo "... src/detect_planes.s"
 	@echo "... src/filters.o"
 	@echo "... src/filters.i"
 	@echo "... src/filters.s"
+	@echo "... src/filters_sor.o"
+	@echo "... src/filters_sor.i"
+	@echo "... src/filters_sor.s"
 	@echo "... src/kinectxyz.o"
 	@echo "... src/kinectxyz.i"
 	@echo "... src/kinectxyz.s"

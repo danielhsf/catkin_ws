@@ -2220,17 +2220,30 @@ visualization_msgs_generate_messages_py/fast:
 .PHONY : visualization_msgs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named testing_messagefilters
+# Target rules for targets named kinectxyz
 
 # Build rule for target.
-testing_messagefilters: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testing_messagefilters
-.PHONY : testing_messagefilters
+kinectxyz: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kinectxyz
+.PHONY : kinectxyz
 
 # fast build rule for target.
-testing_messagefilters/fast:
-	$(MAKE) -f mestrado/CMakeFiles/testing_messagefilters.dir/build.make mestrado/CMakeFiles/testing_messagefilters.dir/build
-.PHONY : testing_messagefilters/fast
+kinectxyz/fast:
+	$(MAKE) -f mestrado/CMakeFiles/kinectxyz.dir/build.make mestrado/CMakeFiles/kinectxyz.dir/build
+.PHONY : kinectxyz/fast
+
+#=============================================================================
+# Target rules for targets named filters_sor
+
+# Build rule for target.
+filters_sor: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 filters_sor
+.PHONY : filters_sor
+
+# fast build rule for target.
+filters_sor/fast:
+	$(MAKE) -f mestrado/CMakeFiles/filters_sor.dir/build.make mestrado/CMakeFiles/filters_sor.dir/build
+.PHONY : filters_sor/fast
 
 #=============================================================================
 # Target rules for targets named detect_planes
@@ -2246,17 +2259,17 @@ detect_planes/fast:
 .PHONY : detect_planes/fast
 
 #=============================================================================
-# Target rules for targets named kinectxyz
+# Target rules for targets named testing_messagefilters
 
 # Build rule for target.
-kinectxyz: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 kinectxyz
-.PHONY : kinectxyz
+testing_messagefilters: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testing_messagefilters
+.PHONY : testing_messagefilters
 
 # fast build rule for target.
-kinectxyz/fast:
-	$(MAKE) -f mestrado/CMakeFiles/kinectxyz.dir/build.make mestrado/CMakeFiles/kinectxyz.dir/build
-.PHONY : kinectxyz/fast
+testing_messagefilters/fast:
+	$(MAKE) -f mestrado/CMakeFiles/testing_messagefilters.dir/build.make mestrado/CMakeFiles/testing_messagefilters.dir/build
+.PHONY : testing_messagefilters/fast
 
 #=============================================================================
 # Target rules for targets named filters
@@ -2663,9 +2676,10 @@ help:
 	@echo "... visualization_msgs_generate_messages_eus"
 	@echo "... visualization_msgs_generate_messages_nodejs"
 	@echo "... visualization_msgs_generate_messages_py"
-	@echo "... testing_messagefilters"
-	@echo "... detect_planes"
 	@echo "... kinectxyz"
+	@echo "... filters_sor"
+	@echo "... detect_planes"
+	@echo "... testing_messagefilters"
 	@echo "... filters"
 	@echo "... receive_pointcloud"
 	@echo "... receive_tf"
