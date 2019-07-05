@@ -23,8 +23,6 @@ pcl/filters/passthrough.h
 -
 pcl/filters/voxel_grid.h
 -
-pcl/io/pcd_io.h
--
 std_msgs/Float32MultiArray.h
 -
 pcl/common/transforms.h

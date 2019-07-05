@@ -18,12 +18,15 @@
 #include <pcl/sample_consensus/model_types.h>
 #include <pcl/segmentation/sac_segmentation.h>
 
+//Header file for Float32MultiArray
+#include <std_msgs/Float32MultiArray.h>
 
 
 class cloudHandler{
 public:
     cloudHandler(){
         pcl_sub = nh.subscribe("/pcl_filtros", 1, &cloudHandler::callback, this);
+        pcl_pub = nh.advertise<std_msgs::Float32MultiArray>("Plane_Equations", 1);
     }
 
     void callback(const sensor_msgs::PointCloud2& input){
@@ -31,6 +34,7 @@ public:
         sensor_msgs::PointCloud2 output;
         pcl::fromROSMsg(input, cloud_filtered);
         pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloudPTR(new pcl::PointCloud<pcl::PointXYZRGBA>);
+        std::vector< float > arr;
         // RANSAC
         // create the Segmentation object
         pcl::SACSegmentation<pcl::PointXYZRGBA> seg;
@@ -65,7 +69,10 @@ public:
                                       << coefficients->values[1] << " "
                                       << coefficients->values[2] << " " 
                                       << coefficients->values[3] << std::endl;
-    
+        arr.push_back(coefficients->values[0]);
+        arr.push_back(coefficients->values[1]);
+        arr.push_back(coefficients->values[2]);
+        arr.push_back(coefficients->values[3]);
         // Extract the inliers
         extract.setInputCloud (cloudPTR);
         extract.setIndices (inliers);
@@ -77,11 +84,25 @@ public:
         extract.filter (*cloud_f);
         cloudPTR.swap (cloud_f);
         i++;
+       
         }
         printf("Planos detectados = %d \n",i);
+        for(int aux = 0;i<arr.size();i+=4){
+        //std::cerr << "Coeficientes do plano (A,B,C,D) 2: " << arr[aux] << " " << arr[aux+1] << " " << arr[aux+2] << " "  << arr[aux+3] << std::endl;
+        }
 
-
-
+        // fill out message:
+        dat.layout.dim.push_back(std_msgs::MultiArrayDimension());
+        dat.layout.dim.push_back(std_msgs::MultiArrayDimension());
+        dat.layout.dim[0].label = "height";
+        dat.layout.dim[1].label = "width";
+        dat.layout.dim[0].size = int(arr.size()/4);
+        dat.layout.dim[1].size = 4;
+        dat.layout.dim[0].stride = arr.size();
+        dat.layout.dim[1].stride = 4;
+        dat.layout.data_offset = 0;
+        dat.data = arr;
+        pcl_pub.publish(dat);
         //output
         //pcl::toROSMsg(cloud_filtered, output);
     	//output.header.frame_id = "point_cloud";
@@ -93,6 +114,8 @@ public:
 protected:
     ros::NodeHandle nh;
     ros::Subscriber pcl_sub;
+    ros::Publisher pcl_pub;
+    std_msgs::Float32MultiArray dat;
 };
 
 main(int argc, char** argv)

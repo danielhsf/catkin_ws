@@ -25,7 +25,7 @@
 #include <pcl/filters/voxel_grid.h>
 
 //Header file for wriiting PCD file
-#include <pcl/io/pcd_io.h>
+//#include <pcl/io/pcd_io.h>
 
 //Header file for Float32MultiArray
 #include <std_msgs/Float32MultiArray.h>
@@ -73,14 +73,12 @@ public:
 	        pitch = copysign(M_PI / 2, sinp); // use 90 degrees if out of range
         else
 	        pitch = asin(sinp);
-        //pitch = 0;
-        // yaw (z-axis rotation)
-        //float siny_cosp = +2.0 * (orientation.w() * orientation.z() + orientation.x() * orientation.y());
-        //float cosy_cosp = +1.0 - 2.0 * (orientation.y() * orientation.y() + orientation.z() * orientation.z());  
-        //yaw = atan2f(siny_cosp, cosy_cosp);
-        //roll = roll;
-        //pitch = pitch;
-        //yaw = - yaw;
+        /*
+        yaw (z-axis rotation)
+        float siny_cosp = +2.0 * (orientation.w() * orientation.z() + orientation.x() * orientation.y());
+        float cosy_cosp = +1.0 - 2.0 * (orientation.y() * orientation.y() + orientation.z() * orientation.z());  
+        yaw = atan2f(siny_cosp, cosy_cosp);
+       */
         yaw = 0;
     }
 
@@ -95,14 +93,6 @@ public:
         printf("Original Point Cloud Size = %d\n",cloud.width * cloud.height); 
         printf("After filtering nans = %d\n",cloud_filtered.width * cloud_filtered.height);
         pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloudPTR(new pcl::PointCloud<pcl::PointXYZRGBA>);
-        // removing Outliers
-        //cloudPTR = cloud_filtered.makeShared();
-        //pcl::StatisticalOutlierRemoval<pcl::PointXYZRGBA> soro;
-        //soro.setInputCloud (cloudPTR);
-        //soro.setMeanK (50);
-        //soro.setStddevMulThresh (1.0);
-        //soro.filter (cloud_filtered);
-        //printf("After Removing outliers = %d\n",cloud_filtered.width * cloud_filtered.height);
         //Voxel Grid
         pcl::VoxelGrid<pcl::PointXYZRGBA> sor;
         cloudPTR = cloud_filtered.makeShared();
@@ -110,7 +100,7 @@ public:
         sor.setLeafSize(0.01f, 0.01f, 0.01f);
         sor.filter(cloud_filtered);
         printf("After Voxel Grid Filter = %d\n",cloud_filtered.width * cloud_filtered.height);
-        //Transform View
+        // Transform View
         transform_1(0,0) = cos(pitch)*cos(yaw);
         transform_1(1,0) = cos(pitch)*sin(yaw);
         transform_1(2,0) = -sin(pitch);
@@ -121,11 +111,8 @@ public:
         transform_1(1,2) = cos(roll)*sin(pitch)*sin(yaw) - sin(roll)*cos(yaw);
         transform_1(2,2) = cos(roll)*cos(pitch);
         printf("Roll = %f, Pitch = %f , yaw = %f \n", roll*180/M_PI, pitch*180/M_PI, yaw*180/M_PI);
-        //cloud_filtered.sensor_orientation_ = orientation;
-        //pcl::PointCloud<pcl::PointXYZRGBA> cloud_transformed;
-        //pcl::io::savePCDFileASCII("Original.pcd", cloud_filtered);
+        //Transform view
         pcl::transformPointCloud(cloud_filtered,cloud_filtered,transform_0);
-        //pcl::io::savePCDFileASCII("Transformado.pcd", cloud_filtered);
         pcl::transformPointCloud(cloud_filtered,cloud_filtered,transform_1);
         pcl::transformPointCloud(cloud_filtered,cloud_filtered,transform_2);
         //PassThrough Filter
@@ -134,7 +121,7 @@ public:
         cloudPTR = cloud_filtered.makeShared();
         pass.setInputCloud(cloudPTR);
         pass.setFilterFieldName("x");
-        pass.setFilterLimits(-0.3,0.3);
+        pass.setFilterLimits(-0.35,0.35);
         pass.filter(cloud_filtered);
         //y
         cloudPTR = cloud_filtered.makeShared();
@@ -146,7 +133,7 @@ public:
         printf("After Pass Through Filter = %d\n",cloud_filtered.width * cloud_filtered.height);
         pcl::toROSMsg(cloud_filtered, output);
     	output.header.frame_id = "point_cloud";
-        pcl::io::savePCDFileASCII("filtrado.pcd", cloud_filtered);
+        //pcl::io::savePCDFileASCII("filtrado.pcd", cloud_filtered);
         pcl_pub.publish(output);
     }
 

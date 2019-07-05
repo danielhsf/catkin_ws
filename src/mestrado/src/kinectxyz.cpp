@@ -57,6 +57,8 @@ public:
         transform_1(2,3) = 0.8;
         transform_2 = Eigen::Matrix4f::Identity();
         transform_2(1,1) = -1;
+        transform_f = Eigen::Matrix4f::Identity();
+        transform_f(2,3) = 0.8;
     }
 
     void orientationcallback(std_msgs::Float32MultiArray sensorimu){
@@ -76,14 +78,6 @@ public:
 	        pitch = copysign(M_PI / 2, sinp)- 2*M_PI/180; // use 90 degrees if out of range
         else
 	        pitch = asin(sinp)- 2*M_PI/180;
-        //pitch = 0;
-        // yaw (z-axis rotation)
-        //float siny_cosp = +2.0 * (orientation.w() * orientation.z() + orientation.x() * orientation.y());
-        //float cosy_cosp = +1.0 - 2.0 * (orientation.y() * orientation.y() + orientation.z() * orientation.z());  
-        //yaw = atan2f(siny_cosp, cosy_cosp);
-        //roll = roll;
-        //pitch = pitch;
-        //yaw = - yaw;
         yaw = 0;
     }
 
@@ -98,15 +92,7 @@ public:
         printf("Original Point Cloud Size = %d\n",cloud.width * cloud.height); 
         printf("After filtering nans = %d\n",cloud_filtered.width * cloud_filtered.height);
         pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloudPTR(new pcl::PointCloud<pcl::PointXYZRGBA>);
-        
-        //Voxel Grid
-        //pcl::VoxelGrid<pcl::PointXYZRGBA> sor;
-        //cloudPTR = cloud_filtered.makeShared();
-        //sor.setInputCloud(cloudPTR);
-        //sor.setLeafSize(0.02f, 0.02f, 0.02f);
-        //sor.filter(cloud_filtered);
-        //printf("After Voxel Grid Filter = %d\n",cloud_filtered.width * cloud_filtered.height);
-        //Transform View
+        // Transform View
         transform_1(0,0) = cos(pitch)*cos(yaw);
         transform_1(1,0) = cos(pitch)*sin(yaw);
         transform_1(2,0) = -sin(pitch);
@@ -117,33 +103,13 @@ public:
         transform_1(1,2) = cos(roll)*sin(pitch)*sin(yaw) - sin(roll)*cos(yaw);
         transform_1(2,2) = cos(roll)*cos(pitch);
         printf("Roll = %f, Pitch = %f , yaw = %f \n", roll*180/M_PI, pitch*180/M_PI, yaw*180/M_PI);
-        //cloud_filtered.sensor_orientation_ = orientation;
-        //pcl::PointCloud<pcl::PointXYZRGBA> cloud_transformed;
-        //pcl::io::savePCDFileASCII("Original.pcd", cloud_filtered);
         pcl::transformPointCloud(cloud_filtered,cloud_filtered,transform_0);
-        //pcl::io::savePCDFileASCII("Transformado.pcd", cloud_filtered);
         pcl::transformPointCloud(cloud_filtered,cloud_filtered,transform_1);
         pcl::transformPointCloud(cloud_filtered,cloud_filtered,transform_2);
-        //PassThrough Filter
-        //printf("After Pass Through Filter = %d\n",cloud_filtered.width * cloud_filtered.height);
-        //x
-        pcl::PassThrough<pcl::PointXYZRGBA> pass;
-        cloudPTR = cloud_filtered.makeShared();
-        pass.setInputCloud(cloudPTR);
-        pass.setFilterFieldName("x");
-        pass.setFilterLimits(-0.3,0.3);
-        pass.filter(cloud_filtered);
-        //y
-        cloudPTR = cloud_filtered.makeShared();
-        pass.setInputCloud(cloudPTR);
-        pass.setFilterFieldName("y");
-        pass.setFilterLimits(0,1.5);
-        pass.filter(cloud_filtered);
-        printf("After Pass Through Filter = %d\n",cloud_filtered.width * cloud_filtered.height);
         //output
         pcl::toROSMsg(cloud_filtered, output);
     	output.header.frame_id = "point_cloud";
-        //pcl::io::savePCDFileASCII("filtrado.pcd", cloud_filtered);
+        pcl::io::savePCDFileASCII("filtrado.pcd", cloud_filtered);
         
         pcl_pub.publish(output);
         
@@ -154,6 +120,7 @@ protected:
     Eigen::Matrix4f transform_0; 
     Eigen::Matrix4f transform_1; 
     Eigen::Matrix4f transform_2;
+    Eigen::Matrix4f transform_f;
     float roll;
     float pitch;
     float yaw;
